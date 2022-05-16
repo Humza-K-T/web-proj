@@ -12,7 +12,7 @@ export default function Registration() {
       <Navbar />
       <div className="Registration">
         <Back />
-        <div className="reigstFields">
+        <div className="registFields">
           <form>
             <div className="registration-parentdiv">
               <div className="registration-indiv">
@@ -32,26 +32,31 @@ export default function Registration() {
                 <br />
               </div>
 
-              <div className="registration-outdiv">
+              <div className="registration-indiv">
                 <InputX name="Random Glucose Level" />
                 <br />
                 <InputX name="Fasting Glucose Level" />
                 <br />
+                <div className="check-buttons">
+                  <Check name="Alcohlic" />
+                  <br />
+                  <Check name="Smoker" />
+                </div>
+                <br />
+
                 <InputX name="Systolic Blood Pressure" />
                 <br />
                 <InputX name="Diastolic Blood Pressure" />
                 <br />
                 <InputX name="Kidney Disease" />
-                <br />
-                <Check name="Alcohlic" />
-                <br />
-                <Check name="Smoker" />
+
                 <br />
                 <InputX name="Family History" />
               </div>
             </div>
-
-            <input type="submit" value="REGISTER" name="Register" />
+            <div className="register-button">
+              <input type="submit" value="REGISTER" name="Register" />
+            </div>
           </form>
         </div>
       </div>

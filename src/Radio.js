@@ -1,4 +1,4 @@
-import "./App.css";
+import "./regist.css";
 import React from "react";
 
 export default function Radio() {
@@ -11,7 +11,7 @@ export default function Radio() {
   }
 
   return (
-    <div className="gender-container">
+    <div className="gender-container ">
       <div>
         <label className="label">Gender</label>
       </div>
