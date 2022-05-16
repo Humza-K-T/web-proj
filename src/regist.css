@@ -153,6 +153,18 @@
 
   color: #000000;
 }
+.inputx input{
+  /* color: #174558; */
+  font-size: x-large;
+  padding: 2px;
+}
+
+.inputx input:focus{
+  border-color: #45819a;
+  
+}
+
+
 .register-button {
   /* background-color: brown; */
   display: flex;
