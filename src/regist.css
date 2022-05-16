@@ -110,6 +110,10 @@
   height: 100%;
 }
 
+.Radio-Buttons input {
+  /* size: 30px; */
+}
+
 .registration-indiv {
   /* background-color: rgb(16, 19, 11); */
 

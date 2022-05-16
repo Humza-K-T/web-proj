@@ -39,6 +39,10 @@
   -o-border-radius: 8px;
 }
 
+.Back :hover {
+  background: #6f9fb4;
+}
+
 .Back-arrow {
   /* position: absolute; */
   /* left: 25%; */

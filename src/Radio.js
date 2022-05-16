@@ -40,6 +40,7 @@ export default function Radio() {
             Female
           </label>
         </div>
+        <br />
         <div className="radio">
           <label>
             <input
