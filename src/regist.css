@@ -1,62 +1,63 @@
-.Registration{
-    /* position: relative; */
-  width: 1440px;
-  height: 1024px;
-  
-  background: #FFFFFF;
-  }
-  
-.in{
-    box-sizing: border-box;
-    /*position: absolute;
-    */width: 232px;
-    height: 37px;
-    /*left: 461px;
-    *//*top: 331px;
-    */border: 1px solid #B5B5B5;
-    filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.25));
-    border-radius: 5px;
-    -webkit-filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.25));
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    -ms-border-radius: 5px;
-    -o-border-radius: 5px;
-  }
-  .label{
-    /* position: absolute; */
-    width: 108px;
-    height: 27px;
-    /* left: 318px; */
-    /* top: 336px; */
-    
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 27px;
-    text-align: right;
-    letter-spacing: 0.04em;
-    
-    color: #000000;
-  
-  } 
-  
-  .gender-container{
-    display:flex;
-  }
-  
-  .registration-outdiv{
-    
-  }
-  
-  .registration-indiv{
-    margin-left:20%;
-    
-  }
-  .registration-parentdiv{
-    display:flex;
-  }
-  .inputx{
-    /* float:none; */
-  
-  }
+.Registration {
+  /* position: relative; */
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  /* background: #ffffff; */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.in {
+  box-sizing: border-box;
+  /*position: absolute;
+    */
+  width: 232px;
+  height: 37px;
+  /*left: 461px;
+    */
+  /top: 331px;
+  */border: 1px solid #b5b5b5;
+  filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.25));
+  border-radius: 5px;
+  -webkit-filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.25));
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.label {
+  /* position: absolute; */
+  width: 108px;
+  height: 27px;
+  /* left: 318px; */
+  /* top: 336px; */
+
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27px;
+  text-align: right;
+  letter-spacing: 0.04em;
+
+  color: #000000;
+}
+
+.gender-container {
+  display: flex;
+}
+
+.registration-outdiv {
+}
+
+.registration-indiv {
+  margin-left: 20%;
+}
+.registration-parentdiv {
+  display: flex;
+}
+.inputx {
+  /* float:none; */
+}
