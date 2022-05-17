@@ -1,15 +1,16 @@
 import "./regist.css";
 import React from "react";
 
-export default function Radio() {
-  const [state, updateState] = React.useState({
-    selectedOption: "Male",
-  });
+export default function Radio(props) {
+  // const [state, updateState] = React.useState({
+  //   selectedOption: "Male",
+  // });
 
-  function onChangeValue(event) {
-    return "";
-  }
+  // function onChangeValue(event) {
+  //   return "";
+  // }
 
+  
   return (
     <div className="gender-container ">
       <div>
@@ -22,8 +23,8 @@ export default function Radio() {
               type="radio"
               value="Male"
               name="gender"
-              // checked={this.state.selectedOption === "Male"}
-              // onChange={this.onValueChange}
+              // checked={props.gender === "Male"}
+               onChange={props.fun}
             />
             Male
           </label>
@@ -34,8 +35,8 @@ export default function Radio() {
               type="radio"
               value="Female"
               name="gender"
-              // checked={this.state.selectedOption === "Female"}
-              // onChange={this.onValueChange}
+               //checked={props.gender === "Female"}
+               onChange={props.fun}
             />
             Female
           </label>
@@ -47,8 +48,8 @@ export default function Radio() {
               type="radio"
               value="Other"
               name="gender"
-              // checked={this.state.selectedOption === "Other"}
-              // onChange={this.onValueChange}
+              // checked={props.gender === "Other"}
+               onChange={props.fun}
             />
             Other
           </label>
