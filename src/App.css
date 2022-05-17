@@ -279,7 +279,7 @@
   background-color: #45819a;
   /*color: #333;
   */
-  cursor: pointer;
+  /* cursor: pointer; */
   /*outline: 0;
   */ /*font-size: 40px;
   */
@@ -290,6 +290,7 @@
   -webkit-border-radius: 50%;
   /* text-align: left; */
 }
+
 
 .NavImgDropdown {
   /* text-align: center; */
