@@ -5,6 +5,7 @@ import Navbar from "./navbar";
 import Radio from "./Radio";
 import InputX from "./InputX";
 import Check from "./Check";
+import DashHeading from "./DashHeading";
 
 export default function Registration() {
   return (
@@ -12,6 +13,7 @@ export default function Registration() {
       <Navbar />
       <div className="Registration">
         <Back />
+        <DashHeading name="Registration" />
         <div className="registFields">
           <form>
             <div className="registration-parentdiv">
