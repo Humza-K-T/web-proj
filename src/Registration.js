@@ -8,52 +8,87 @@ import Check from "./Check";
 import DashHeading from "./DashHeading";
 
 export default function Registration() {
-  return (
+
+  const[state, setState] = React.useState({
+    name: "",
+    dateOfBirth: "",
+    contactNo: "",
+    height:"",
+    gender:"",
+    weight:"",
+    hospitalId:"",
+    randomGluLevel:"",
+    fastingGluLevel:"",
+    alcohlic: false,
+    smoker: false,
+    systolicBloodPressure: "",
+    diastolicBloodPressure: "",
+    kidneyDisease: "",
+    familyHistory: ""
+  });
+
+  const handleChange = (event) => {
+    
+    const { name, value , type, checked} = event.target;
+    setState({
+      ...state,
+      [name]: type === "checkbox" ? checked :  value
+    });
+  };
+ 
+  function handleSubmit(event) {
+    event.preventDefault();
+    console.log(state);
+  }
+
+
+
+  return (  
     <>
       <Navbar />
       <div className="Registration">
         <Back />
         <DashHeading name="Registration" />
         <div className="registFields">
-          <form>
+          <form method="post" action="http://localhost/registration.php" onSubmit={handleSubmit}>
             <div className="registration-parentdiv">
               <div className="registration-indiv">
-                <InputX name="Name" />
+                <InputX name="name" fun={handleChange} />
                 <br />
-                <InputX name="Date of Birth" />
+                <InputX name="dateOfBirth" fun={handleChange} />
                 <br />
-                <Radio />
+                <Radio name="gender" gender={state.gender} fun={handleChange} />
                 <br />
-                <InputX name="Contact Number" />
+                <InputX name="contactNo" fun={handleChange} />
                 <br />
-                <InputX name="Height" />
+                <InputX name="height" fun={handleChange}/>
                 <br />
-                <InputX name="Weight" />
+                <InputX name="weight" fun={handleChange}/>
                 <br />
-                <InputX name="HospitalID" />
+                <InputX name="hospitalID" fun={handleChange} />
                 <br />
               </div>
 
               <div className="registration-indiv">
-                <InputX name="Random Glucose Level" />
+                <InputX name="randomGluLevel"  fun={handleChange} />
                 <br />
-                <InputX name="Fasting Glucose Level" />
+                <InputX name="fastingGluLevel" fun={handleChange} />
                 <br />
                 <div className="check-buttons">
-                  <Check name="Alcohlic" />
+                  <Check name="alcohlic" checked={state.alcohlic} fun={handleChange}/>
                   <br />
-                  <Check name="Smoker" />
+                  <Check name="smoker" checked={state.smoker} fun={handleChange} />
                 </div>
                 <br />
 
-                <InputX name="Systolic Blood Pressure" />
+                <InputX name="systolicBloodPressure" fun={handleChange} />
                 <br />
-                <InputX name="Diastolic Blood Pressure" />
+                <InputX name="diastolicBloodPressure" fun={handleChange} />
                 <br />
-                <InputX name="Kidney Disease" />
+                <InputX name="kidneyDisease" fun={handleChange} />
 
                 <br />
-                <InputX name="Family History" />
+                <InputX name="familyHistory"  fun={handleChange} />
               </div>
             </div>
             <div className="register-button">

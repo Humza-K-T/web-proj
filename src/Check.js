@@ -6,7 +6,7 @@ export default function Check(props) {
     <div className="check ">
       <label className="label">
         {props.name}
-        <input type="checkbox" className="check-input" name={props.name} />
+        <input type="checkbox" className="check-input" name={props.name} checked={props.checked} onChange={props.fun} />
       </label>
     </div>
   );

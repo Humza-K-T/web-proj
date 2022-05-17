@@ -6,7 +6,7 @@ export default function InputX(props) {
     <>
       <div className="inputx">
         {props.name}
-        <input type="text" className="in" name={props.name} />
+        <input type="text" className="in" name={props.name} onChange={props.fun}/>
       </div>
     </>
   );
