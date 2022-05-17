@@ -9,7 +9,7 @@ import Registration from "./Registration";
 function App() {
   return (
     <>
-      <PatientReport />;
+      <PatientReport />
     </>
   );
 }
