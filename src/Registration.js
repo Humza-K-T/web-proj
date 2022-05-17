@@ -53,26 +53,26 @@ export default function Registration() {
           <form method="post" action="http://localhost/registration.php" onSubmit={handleSubmit}>
             <div className="registration-parentdiv">
               <div className="registration-indiv">
-                <InputX name="name" />
+                <InputX name="name" fun={handleChange} />
                 <br />
-                <InputX name="dateOfBirth" />
+                <InputX name="dateOfBirth" fun={handleChange} />
                 <br />
                 <Radio name="gender" gender={state.gender} fun={handleChange} />
                 <br />
-                <InputX name="contactNo" />
+                <InputX name="contactNo" fun={handleChange} />
                 <br />
-                <InputX name="height" />
+                <InputX name="height" fun={handleChange}/>
                 <br />
-                <InputX name="weight" />
+                <InputX name="weight" fun={handleChange}/>
                 <br />
-                <InputX name="hospitalID" />
+                <InputX name="hospitalID" fun={handleChange} />
                 <br />
               </div>
 
               <div className="registration-indiv">
-                <InputX name="randomGluLevel" />
+                <InputX name="randomGluLevel"  fun={handleChange} />
                 <br />
-                <InputX name="fastingGluLevel" />
+                <InputX name="fastingGluLevel" fun={handleChange} />
                 <br />
                 <div className="check-buttons">
                   <Check name="alcohlic" checked={state.alcohlic} fun={handleChange}/>
@@ -81,14 +81,14 @@ export default function Registration() {
                 </div>
                 <br />
 
-                <InputX name="systolicBloodPressure" />
+                <InputX name="systolicBloodPressure" fun={handleChange} />
                 <br />
-                <InputX name="diastolicBloodPressure" />
+                <InputX name="diastolicBloodPressure" fun={handleChange} />
                 <br />
-                <InputX name="kidneyDisease" />
+                <InputX name="kidneyDisease" fun={handleChange} />
 
                 <br />
-                <InputX name="familyHistory" />
+                <InputX name="familyHistory"  fun={handleChange} />
               </div>
             </div>
             <div className="register-button">
