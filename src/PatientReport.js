@@ -1,7 +1,7 @@
 // import React from "react";
 import "./PatientReport.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
 import Navbar from "./navbar";
 import Back from "./Back";
 import PatientHeader from "./PatientHeader";
