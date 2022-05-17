@@ -1,6 +1,7 @@
 import "./App.css";
 import Dropdown from "./Dropdown";
 export default function Navbar() {
+ 
   return (
     <>
       <nav className="navbar">

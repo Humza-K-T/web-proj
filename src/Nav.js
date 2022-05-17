@@ -1,5 +1,8 @@
 import "./Dash.css";
 export default function Nav() {
+
+ 
+
   return (
 <> 
  <nav className="navbar">
@@ -10,13 +13,17 @@ export default function Nav() {
         </center>
         </div>
         <div className="navinnerDiv">
-        <img className="navimage "src="./Icon.png" width="30px" />
+        <img className="navimage " onClick={() => imageClick()} src="./Icon.png" width="30px" />
         </div>
         <div className="navButtonDiv">
             <button>Dashboard</button>
         </div>
       </div>
     </nav>
-    </>      
+    </> 
+
+
   );
+ 
+  
 }
