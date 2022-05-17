@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Encode+Sans+SC&display=swap");
+
+.DashHeading {
+  display: flex;
+  align-items: center;
+}
+.DashHeading p {
+  padding: 10px 20px;
+  /* border: ; */
+  font-family: "Encode Sans SC";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 75px;
+  line-height: 94px;
+  /* identical to box height */
+
+  text-align: center;
+  text-transform: lowercase;
+
+  color: #45819a;
+
+  background: #ffffff;
+  border: 3px solid #45819a;
+  border-radius: 18px;
+}
