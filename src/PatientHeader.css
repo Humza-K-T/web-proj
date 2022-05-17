@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css?family=Encode+Sans+SC&display=swap");
+
+.PatientHeader-Main-Div {
+  background: rgba(98, 151, 173, 0.92);
+  /* border: 1px solid #45819a; */
+  border-radius: 21px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+  /* width: 800px; */
+  width: 683px;
+  /* height: 210px; */
+}
+.PatientImageDiv {
+  /* background-color: red; */
+  padding: 20px;
+  border-right: 3px solid white;
+  width: 300px;
+}
+
+.PatientImage {
+  /* border: 20px solid black; */
+  width: 100%;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.Patient-details-div {
+  /* background-color: pink; */
+  width: 100%;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  /* text-transform: lowercase; */
+  align-items: center;
+  justify-content: flex-start;
+  color: #ffffff;
+}
+
+.Patient-details-field {
+  display: flex;
+  /* background-color: yellow; */
+  margin: 3px;
+  flex-direction: row;
+  width: 100%;
+}
+
+.Patient-details-field-r {
+  /* background-color: orange; */
+  /* border: 1px solid black; */
+  width: 100%;
+  font-family: "Encode Sans SC";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 44px;
+  text-align: center;
+}
+
+.Patient-details-field-l {
+  /* background-color: orangered; */
+  /* border: 1px solid black; */
+  width: 100%;
+  font-family: "Encode Sans SC";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 44px;
+  text-align: right;
+}

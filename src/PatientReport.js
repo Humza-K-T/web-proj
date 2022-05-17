@@ -4,44 +4,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
 import Navbar from "./navbar";
 import Back from "./Back";
+import PatientHeader from "./PatientHeader";
 const PatientReport = () => {
   return (
     <div>
       <Navbar />
       <Back />
-      <div className="report--infobox">
-        <FontAwesomeIcon
-          icon={faUserCircle}
-          size={"10x"}
-          color={"white"}
-          display={"center"}
-          className="report--icon"
-        />
-        <div className="report--infobox-text">
-          <table>
-            <tr>
-              <th>Name </th>
-              <td> Bilal</td>
-            </tr>
-            <br></br>
-            <tr>
-              <th>ID </th>
-              <td> 1234</td>
-            </tr>
-            <br></br>
-            <tr>
-              <th>DOB </th>
-              <td> 12-03-1989</td>
-            </tr>
-            <br></br>
-            <tr>
-              <th>Visit Date</th>
-              <td> 03-05-2021</td>
-            </tr>
-            <br></br>
-          </table>
-        </div>
-      </div>
+      <PatientHeader
+        name="Afra Siyab"
+        ID="12534"
+        DOB="10-1-2000"
+        VisitDate="10-1-2022"
+        gender="female"
+      />
       <div className="report--maindiv">
         <div className="report--box3">
           <form>
