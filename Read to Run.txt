@@ -1,0 +1,6 @@
+The node_modules have to be download via the command 
+npx create-react-app my-app
+cd my-app
+npm start
+
+and then paste the source and public in the app to run
