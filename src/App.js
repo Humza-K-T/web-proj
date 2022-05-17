@@ -8,7 +8,7 @@ import Registration from "./Registration";
 function App() {
   return (
     <>
-      <Dashboard />;
+      <Registration />;
     </>
   );
 }
