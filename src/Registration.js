@@ -6,51 +6,53 @@ import Radio from "./Radio";
 import InputX from "./InputX";
 import Check from "./Check";
 import DashHeading from "./DashHeading";
+import { useNavigate } from "react-router-dom";
 
 export default function Registration() {
-
-  const[state, setState] = React.useState({
+  const [state, setState] = React.useState({
     name: "",
     dateOfBirth: "",
     contactNo: "",
-    height:"",
-    gender:"",
-    weight:"",
-    hospitalId:"",
-    randomGluLevel:"",
-    fastingGluLevel:"",
+    height: "",
+    gender: "",
+    weight: "",
+    hospitalId: "",
+    randomGluLevel: "",
+    fastingGluLevel: "",
     alcohlic: false,
     smoker: false,
     systolicBloodPressure: "",
     diastolicBloodPressure: "",
     kidneyDisease: "",
-    familyHistory: ""
+    familyHistory: "",
   });
 
   const handleChange = (event) => {
-    
-    const { name, value , type, checked} = event.target;
+    const { name, value, type, checked } = event.target;
     setState({
       ...state,
-      [name]: type === "checkbox" ? checked :  value
+      [name]: type === "checkbox" ? checked : value,
     });
   };
- 
+
   function handleSubmit(event) {
     event.preventDefault();
     console.log(state);
   }
 
-
-
-  return (  
+  const navigate = useNavigate();
+  return (
     <>
       <Navbar />
       <div className="Registration">
         <Back />
         <DashHeading name="Registration" />
         <div className="registFields">
-          <form method="post" action="http://localhost/registration.php" onSubmit={handleSubmit}>
+          <form
+            method="post"
+            action="http://localhost/registration.php"
+            onSubmit={handleSubmit}
+          >
             <div className="registration-parentdiv">
               <div className="registration-indiv">
                 <InputX name="name" fun={handleChange} />
@@ -61,23 +63,31 @@ export default function Registration() {
                 <br />
                 <InputX name="contactNo" fun={handleChange} />
                 <br />
-                <InputX name="height" fun={handleChange}/>
+                <InputX name="height" fun={handleChange} />
                 <br />
-                <InputX name="weight" fun={handleChange}/>
+                <InputX name="weight" fun={handleChange} />
                 <br />
                 <InputX name="hospitalID" fun={handleChange} />
                 <br />
               </div>
 
               <div className="registration-indiv">
-                <InputX name="randomGluLevel"  fun={handleChange} />
+                <InputX name="randomGluLevel" fun={handleChange} />
                 <br />
                 <InputX name="fastingGluLevel" fun={handleChange} />
                 <br />
                 <div className="check-buttons">
-                  <Check name="alcohlic" checked={state.alcohlic} fun={handleChange}/>
+                  <Check
+                    name="alcohlic"
+                    checked={state.alcohlic}
+                    fun={handleChange}
+                  />
                   <br />
-                  <Check name="smoker" checked={state.smoker} fun={handleChange} />
+                  <Check
+                    name="smoker"
+                    checked={state.smoker}
+                    fun={handleChange}
+                  />
                 </div>
                 <br />
 
@@ -88,10 +98,10 @@ export default function Registration() {
                 <InputX name="kidneyDisease" fun={handleChange} />
 
                 <br />
-                <InputX name="familyHistory"  fun={handleChange} />
+                <InputX name="familyHistory" fun={handleChange} />
               </div>
             </div>
-            <div className="register-button">
+            <div className="register-button" onClick={() => navigate(-1)}>
               <input type="submit" value="REGISTER" name="Register" />
             </div>
           </form>
