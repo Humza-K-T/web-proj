@@ -5,6 +5,10 @@ import "./PatientReport.css";
 import Navbar from "./navbar";
 import Back from "./Back";
 import PatientHeader from "./PatientHeader";
+import ReportTable from "./ReportTable";
+import ReportTable2 from "./ReportTable2";
+
+// import { ReportTable, ReportTable2 } from './ReportTable.js';
 const PatientReport = () => {
   return (
     <div>
@@ -17,91 +21,22 @@ const PatientReport = () => {
         VisitDate="10-1-2022"
         gender="female"
       />
-      <div className="report--maindiv">
-        <div className="report--box3">
-          <form>
-            <label className="report--label">CBC-WBC:</label>
-            <input type="text" className="report--input" />
-            <br></br> <br></br>
-            <label className="report--label">CBC-Platelets</label>
-            <input type="text" className="report--input" />
-            <br></br> <br></br>
-            <label className="report--label">CBC-Hemoglobin:</label>
-            <input type="text" className="report--input" />
-            <br></br> <br></br>
-            <label className="report--label">CBC-Creatinine</label>
-            <input type="text" className="report--input" />
-            <br></br> <br></br>
-            <label className="report--label">eGFR:</label>
-            <input type="text" className="report--input" />
-            <br></br> <br></br>
-            <label className="report--label">AST</label>
-            <input type="text" className="report--input" />
-            <br></br> <br></br>
-            <label className="report--label">ALT</label>
-            <input type="text" className="report--input" />
-            <br></br> <br></br>
-            <label className="report--label">ALT222</label>
-            <input type="text" className="report--input" />
-            <br></br> <br></br>
-            <label className="report--label">ALT222</label>
-            <input type="text" className="report--input" />
-            <br></br> <br></br>
-            <label className="report--label">ALT222</label>
-            <input type="text" className="report--input" />
-            <br></br> <br></br>
-            <label className="report--label">ALT222</label>
-            <input type="text" className="report--input" />
-          </form>
+      <div className="maindiv">
+        <div className="leftdiv">
+          <ReportTable />
+          <ReportTable />
         </div>
-        <div className="report--box1">
-          <form>
-            <label className="report--label">CBC-WBC:</label>
-            <input type="text" className="report--input" />
-            <label className="report--label">CBC-Platelets</label>
-            <input type="text" className="report--input" />
-            <br></br> <br></br>
-            <label className="report--label">CBC-Hemoglobin:</label>
-            <input type="text" className="report--input" />
-            <label className="report--label">CBC-Creatinine</label>
-            <input type="text" className="report--input" />
-            <br></br> <br></br>
-            <label className="report--label">eGFR:</label>
-            <input type="text" className="report--input" />
-            <label className="report--label">AST</label>
-            <input type="text" className="report--input" />
-            <br></br> <br></br>
-            <label className="report--label">AL11111T</label>
-            <input type="text" className="report--input" />
-          </form>
-        </div>
-        <div className="report--box2">
-          <form>
-            <label className="report--label">CBC-WBC:</label>
-            <input type="text" className="report--input" />
-            <label className="report--label">CBC-Platelets</label>
-            <input type="text" className="report--input" />
-            <br></br> <br></br>
-            <label className="report--label">CBC-Hemoglobin:</label>
-            <input type="text" className="report--input" />
-            <label className="report--label">CBC-Creatinine</label>
-            <input type="text" className="report--input" />
-            <br></br> <br></br>
-            <label className="report--label">eGFR:</label>
-            <input type="text" className="report--input" />
-            <label className="report--label">AST</label>
-            <input type="text" className="report--input" />
-            <br></br> <br></br>
-            <label className="report--label">ALT</label>
-            <input type="text" className="report--input" />
-          </form>
+        <div className="rightdiv">
+          <ReportTable2 />
         </div>
       </div>
-      <span>
+      <div className="buttondiv">
         <button className="report--button">DELETE REPORT</button>
         <button className="report--button2">SAVE REPORT</button>
-      </span>
+      </div>
+
     </div>
   );
 };
 export default PatientReport;
+

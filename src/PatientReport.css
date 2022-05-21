@@ -1,119 +1,8 @@
-.App {
-  text-align: center;
-}
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.buttondiv {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-.App-link {
-  color: #61dafb;
-}
-.report--infobox {
-  margin-top: 5%;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  display: table;
-  padding: 20px;
-  background-color: #6f9fb4;
-  border: 1px solid #6f9fb4;
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
-  margin-bottom: 30px;
-}
-.report--icon {
-  float: left;
-  margin-right: 70px;
-  margin-bottom: auto;
-}
-.report--infobox-text {
-  float: right;
-  color: white;
-}
-.report--box1,
-.report--box2 {
-  width: 40%;
-  margin-left: 70px;
-  margin-bottom: 30px;
-  border: 1px solid #6f9fb4;
-  display: block;
-  border-radius: 8px;
-  padding: 20px 0px 20px 0px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
-}
-.report--box3 {
-  /* is box ki css thori sahi kr de*/
-  float: right;
-  margin-right: 200px;
-  margin-top: 0;
-  width: 500px;
-  text-align: center;
-  margin-bottom: 20px;
-  border: 1px solid #6f9fb4;
-  border-radius: 8px;
-  padding: 40px 0px 40px 0px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
-  align-items: center;
-}
-.report--input {
-  margin-top: 0;
-  width: 7%;
-  border: 1px solid #d8bcbc;
-  border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -ms-border-radius: 3px;
-  -o-border-radius: 3px;
-}
-.report--label {
-  display: inline-block;
-  text-align: right;
-  width: 30%;
-  margin-right: 10px;
-}
-.report--button-div {
-  background-color: bisque;
-  display: inline-block;
-  width: calc(50% - 4px);
-  margin: 40px auto;
-  text-align: center;
-  align-items: center;
-}
-.report--button {
-  border: 1px solid #6f9fb4;
-  background-color: #6f9fb4;
-  color: white;
-  font-size: 20px;
-  padding: 10px 60px;
-  border-radius: 5px;
-  margin-top: 5%;
-  margin-left: 30%;
-  cursor: pointer;
-}
+.report--button,
 .report--button2 {
   border: 1px solid #6f9fb4;
   background-color: #6f9fb4;
@@ -121,13 +10,56 @@
   font-size: 20px;
   padding: 10px 60px;
   border-radius: 5px;
-  margin: 70px 10px;
+  margin: 10px 25px;
   cursor: pointer;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
 }
+
+.maindiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.leftdiv {
+  margin: 10px 30px;
+}
+.rightdiv {
+  margin: 10px 30px;
+}
+
+.report--table,
+.report--table2 {
+  border: 1px solid #6f9fb4;
+  width: auto;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  padding: 25px 25px 25px 25px;
+}
+.report--table {
+  margin: 35px 20px;
+}
+.report--table2 {
+  padding: 25px 25px 25px 25px;
+}
+
+input {
+  width: auto;
+  border: 1px solid #d8bcbc;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+span {
+  display: inline-block;
+  width: 350px;
+  text-align: right;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
