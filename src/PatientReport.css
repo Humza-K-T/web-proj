@@ -1,0 +1,70 @@
+.buttondiv {
+  display: flex;
+  justify-content: center;
+}
+.report--button,
+.report--button2 {
+  border: 1px solid #6f9fb4;
+  background-color: #6f9fb4;
+  color: white;
+  font-size: 20px;
+  padding: 10px 60px;
+  border-radius: 5px;
+  margin: 10px 25px;
+  cursor: pointer;
+}
+
+.maindiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.leftdiv {
+  margin: 10px 30px;
+}
+.rightdiv {
+  margin: 10px 30px;
+}
+
+.report--table,
+.report--table2 {
+  border: 1px solid #6f9fb4;
+  width: auto;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  padding: 25px 25px 25px 25px;
+}
+.report--table {
+  margin: 35px 20px;
+}
+.report--table2 {
+  padding: 25px 25px 25px 25px;
+}
+
+input {
+  width: auto;
+  border: 1px solid #d8bcbc;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+span {
+  display: inline-block;
+  width: 350px;
+  text-align: right;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
