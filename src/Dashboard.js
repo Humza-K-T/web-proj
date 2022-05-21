@@ -1,7 +1,10 @@
 import "./Dash.css";
 import DashHeading from "./DashHeading";
 import Navbar from "./navbar";
+import { useNavigate } from "react-router-dom";
+
 export default function Dashboard() {
+  const navigate = useNavigate();
   return (
     <>
       <Navbar />
@@ -37,7 +40,11 @@ export default function Dashboard() {
         </div>
 
         <div className="DashButtonDiv">
-          <button type="button" class="DashmyButton">
+          <button
+            type="button"
+            class="DashmyButton"
+            onClick={() => navigate("/reg")}
+          >
             Register New Patient
           </button>
         </div>
