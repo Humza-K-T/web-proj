@@ -2,17 +2,10 @@ import "./App.css";
 import Dashboard from "./Dashboard";
 import PatientReport from "./PatientReport";
 import Registration from "./Registration";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link,
-  useNavigate,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LoginScreen from "./LoginScreen";
 
 function App() {
-  const navigate = useNavigate();
   return (
     <Router>
       <Routes>
