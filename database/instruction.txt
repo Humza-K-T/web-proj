@@ -1,0 +1,1 @@
+Run this SQL file on your xampp server on the same local host as that of the React project to fetch data successfully.
