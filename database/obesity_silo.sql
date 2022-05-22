@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 21, 2022 at 07:47 PM
+-- Generation Time: May 22, 2022 at 09:27 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -128,23 +128,33 @@ CREATE TABLE `patientclinicalrecord` (
 --
 
 CREATE TABLE `patientprofile` (
-  `patientId` int(15) NOT NULL,
-  `patientMRNO` int(15) NOT NULL,
-  `patientName` text NOT NULL,
-  `gender` varchar(10) NOT NULL,
-  `DateOfBirth` date NOT NULL,
-  `height` float NOT NULL,
-  `weight` float NOT NULL,
-  `DateOfRegistration` date NOT NULL,
-  `SBP` int(10) NOT NULL,
-  `DBP` int(10) NOT NULL,
-  `RGLevel` float NOT NULL,
-  `FGLevel` float NOT NULL,
-  `smoker` tinyint(1) NOT NULL,
-  `alcoholic` tinyint(1) NOT NULL,
-  `familyHeartHistory` tinyint(1) NOT NULL,
-  `kidneyIssue` tinyint(1) NOT NULL
+  `patientId` int(11) NOT NULL,
+  `patientName` varchar(255) NOT NULL,
+  `gender` varchar(255) DEFAULT NULL,
+  `dateOfBirth` varchar(255) DEFAULT NULL,
+  `height` varchar(255) DEFAULT NULL,
+  `weight` varchar(255) DEFAULT NULL,
+  `dateOfRegistration` varchar(255) DEFAULT NULL,
+  `SBP` varchar(25) DEFAULT NULL,
+  `DBP` varchar(25) DEFAULT NULL,
+  `RGLevel` varchar(255) DEFAULT NULL,
+  `FGLevel` varchar(255) DEFAULT NULL,
+  `smoker` varchar(255) DEFAULT NULL,
+  `alcoholic` varchar(255) DEFAULT NULL,
+  `familyHeartHistory` varchar(255) DEFAULT NULL,
+  `kidneyIssue` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `patientprofile`
+--
+
+INSERT INTO `patientprofile` (`patientId`, `patientName`, `gender`, `dateOfBirth`, `height`, `weight`, `dateOfRegistration`, `SBP`, `DBP`, `RGLevel`, `FGLevel`, `smoker`, `alcoholic`, `familyHeartHistory`, `kidneyIssue`) VALUES
+(1, 'Gujjariya', 'Female', '22/4/2022', '23', '10', 'LOLLAA', '46', '38', '48', '487', 'true', 'true', 'Very Bad', 'Yes'),
+(2, 'Khawar Boink', 'Male', '22/4/2022', '23', '10', '2022-05-22 19:15:18', '46', '38', '48', '487', 'true', 'true', 'Very Bad', 'Yes'),
+(3, 'Saad Gamer', 'Male', '22/4/2022', '23', '10', '2022-05-22 19:15:53', '46', '38', '48', '487', '', '', 'Very Bad', 'Yes'),
+(4, 'BONDA', 'Female', '2/15/2022', '45', '56', '2022-05-22 19:18:54', '45', '34', '67', '56', '', '', '32', '23'),
+(5, 'Khawar Boink', 'Female', '2134', '4345', '45', '2022-05-22 20:08:59', '45', '76', '234', '345', 'true', 'true', '234', '345');
 
 -- --------------------------------------------------------
 
@@ -233,11 +243,27 @@ CREATE TABLE `userrole` (
 --
 
 --
+-- Indexes for table `patientprofile`
+--
+ALTER TABLE `patientprofile`
+  ADD PRIMARY KEY (`patientId`);
+
+--
 -- Indexes for table `userlogin`
 --
 ALTER TABLE `userlogin`
   ADD PRIMARY KEY (`userLoginId`),
   ADD UNIQUE KEY `UC_username` (`userLoginName`) USING HASH;
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `patientprofile`
+--
+ALTER TABLE `patientprofile`
+  MODIFY `patientId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
