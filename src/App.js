@@ -4,6 +4,7 @@ import PatientReport from "./PatientReport";
 import Registration from "./Registration";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LoginScreen from "./LoginScreen";
+import PatientScreen from "./PatientScreen";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/reg" element={<Registration />} />
         <Route path="/dash" element={<Dashboard />} />
         <Route path="/report" element={<PatientReport />} />
+        <Route path="/patientScreen" element={<PatientScreen />} />
       </Routes>
     </Router>
   );

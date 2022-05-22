@@ -1,0 +1,44 @@
+.buttondiv {
+  display: flex;
+
+  justify-content: center;
+}
+.report--button {
+  font-family: "Encode Sans SC";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 38px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  /* text-transform: lowercase; */
+  /* align-items: center; */
+
+  color: #ffffff;
+  /* font-size: 20px; */
+  /* padding: 10px 60px; */
+  /* border-radius: 5px; */
+  /* margin: 10px 25px; */
+  cursor: pointer;
+}
+.Heading {
+  padding: 50px;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* width: 275px; */
+  /* height: 34px; */
+  /* left: 301px; */
+  /* top: 588px; */
+  color: #45819a;
+  font-family: "Encode Sans SC";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 36px;
+  letter-spacing: 0.04em;
+  text-decoration-line: underline;
+}

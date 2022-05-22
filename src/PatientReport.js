@@ -32,11 +32,9 @@ const PatientReport = () => {
       </div>
       <div className="buttondiv">
         <button className="report--button">DELETE REPORT</button>
-        <button className="report--button2">SAVE REPORT</button>
+        <button className="report--button">SAVE REPORT</button>
       </div>
-
     </div>
   );
 };
 export default PatientReport;
-
