@@ -1,5 +1,7 @@
 <?php
     header('Access-Control-Allow-Origin: http://localhost:3000');
+    $id =1;
+    $MRNO=1000;
 
     $name=$_POST['name'];
     $dateOfBirth=$_POST['dateOfBirth'];
@@ -17,15 +19,20 @@
     $kidneyDisease=$_POST['kidneyDisease'];
     $familyHistory=$_POST['familyHistory'];
 
+    $conn = new mysqli("localhost", "root", "", "obesity silo");
+    $sql1 = "INSERT INTO patientprofile (patientId, patientMRNO, patientName, gender, DateOfBirth, height, weight, SBP, DBP, RGLevel, FGLevel, smoker, alchoholic, familyHeartHistory, kidneyIssue)
+    VALUES ($id,$MRNO, $name, $gender,  $dateOfBirth, $height,$weight,$systolicBloodPressure,$diastolicBloodPressure ,$randomGluLevel,$fastingGluLevel,$smoker,$alcohlic, $familyHistory,$kidneyDisease);";
+    $result1 = $conn->query($sql1);
+
+    if ($result1->num_rows >= 0) {
+      echo "Successful";
+
+        }
+        else{
+            echo "Unsuccessful";
+        }
     
     
-    echo ("Hello from server: ");
-    echo ("Name: " . $name);
-    echo ("Date of Birth: " . $dateOfBirth);
-    echo ("Contact No: " . $contactNo);
-    echo ("Height: " . $height);
-    echo ("gender: ".  $gender);
-    echo ("alcoholic" . $alcohlic);
     
     
 ?>

@@ -35,12 +35,15 @@ export default function Registration() {
     });
   };
 
+  const navigate = useNavigate();
+
   function handleSubmit(event) {
-    event.preventDefault();
+    //event.preventDefault();
+    //navigate(-1)}
     console.log(state);
   }
 
-  const navigate = useNavigate();
+  
   return (
     <>
       <Navbar />
@@ -67,7 +70,7 @@ export default function Registration() {
                 <br />
                 <InputX name="weight" fun={handleChange} />
                 <br />
-                <InputX name="hospitalID" fun={handleChange} />
+                <InputX name="hospitalId" fun={handleChange} />
                 <br />
               </div>
 
@@ -101,7 +104,7 @@ export default function Registration() {
                 <InputX name="familyHistory" fun={handleChange} />
               </div>
             </div>
-            <div className="register-button" onClick={() => navigate(-1)}>
+            <div className="register-button" >
               <input type="submit" value="REGISTER" name="Register" />
             </div>
           </form>
