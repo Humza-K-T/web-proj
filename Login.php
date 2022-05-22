@@ -1,41 +1,31 @@
 <?php
     header('Access-Control-Allow-Origin: http://localhost:3000');
-    $user=$_POST["username"];
-    $pass=$_POST["password"];
 
-    if(empty($user) ){
-        echo "Username is Required";
-    }
-    else if(empty($pass)){
-        echo "Password is required";
-    }
-    else{
+    $name=$_POST['name'];
+    $dateOfBirth=$_POST['dateOfBirth'];
+    $contactNo=$_POST['contactNo'];
+    $height=$_POST['height'];
+    $gender=$_POST['gender'];
+    $weight=$_POST['weight'];
+    $hospitalId=$_POST['hospitalId'];
+    $randomGluLevel=$_POST['randomGluLevel'];
+    $fastingGluLevel=$_POST['fastingGluLevel'];
+    $alcohlic=$_POST['alcohlic'];
+    $smoker=$_POST['smoker'];
+    $systolicBloodPressure=$_POST['systolicBloodPressure'];
+    $diastolicBloodPressure=$_POST['diastolicBloodPressure'];
+    $kidneyDisease=$_POST['kidneyDisease'];
+    $familyHistory=$_POST['familyHistory'];
+    $date = date('Y-m-d H:i:s');
 
-        
     $conn = new mysqli("localhost", "root", "", "obesity silo");
-    $sql1 = "SELECT * FROM userlogin";
-    $result1 = $conn->query($sql1);
-
-    if ($result1->num_rows > 0) {
-        while ($row1 = $result1->fetch_assoc()) {
-            $username = $row1["userLoginName"];
-            $password = $row1["password"];
-
-           // echo "Username: " . $username . " Password: " . $password . "<br>";
-
-        }
+    $sql = "INSERT INTO patientprofile (patientName, gender, DateOfBirth, height, weight, dateOfRegistration, SBP, DBP, RGLevel, FGLevel, smoker, alcoholic, familyHeartHistory, kidneyIssue)
+    VALUES ('$name', '$gender', '$dateOfBirth', $height, $weight, '$date', $systolicBloodPressure,$diastolicBloodPressure, $randomGluLevel, $fastingGluLevel, '$smoker', '$alcohlic', '$familyHistory' ,'$kidneyDisease');";
+      
+    if ($conn->query($sql) === TRUE) {
+      echo "New record created successfully";
+    } else {
+      echo "Error: " . $sql . "<br>" . $conn->error;
     }
-
-
-    if( $user ===$username && $pass = $password){
-        echo "Welcome";
-    }
-    else{
-        echo "Invalid Username or Password";
-    }
-
-    }
-    
-    
-    
+        
 ?>
