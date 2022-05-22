@@ -1,13 +1,13 @@
 import React from "react";
 import "./App.css";
 import $ from "jquery";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginScreen() {
-
   const [state, updateState] = React.useState({
     username: "",
     password: "",
-    message : ""
+    message: "",
   });
 
   function onChangeValue(event) {
@@ -16,25 +16,27 @@ export default function LoginScreen() {
       [event.target.name]: event.target.value,
     });
   }
-
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = $(e.target);
     $.ajax({
-        type: "POST",
-        url: form.attr("action"),
-        data: form.serialize(),
-        success(data) {
-            updateState(
-              {
-                ...state,
-                message: data
-              }
-            );
-        },
+      type: "POST",
+      url: form.attr("action"),
+      data: form.serialize(),
+      success(data) {
+        updateState({
+          ...state,
+          message: data,
+        });
+        console.log(state.message);
+        console.log(
+          state.message === "Welcome" ? navigate("./dash") : navigate("/")
+        );
+        state.message === "Welcome" ? navigate("./dash") : navigate("/");
+      },
     });
-};
-  
+  };
 
   // React.useState(
   //   () => {
@@ -49,8 +51,6 @@ export default function LoginScreen() {
   //   },
   //   [state.username]
   // );
-  
-
 
   return (
     <div className="loginBody">
@@ -65,29 +65,29 @@ export default function LoginScreen() {
           <div className="titleDiv">
             <h1 className="loginTitle">
               Pharmacotherapy for Obesity Management
-         {state.message}
             </h1>
           </div>
           <div className="loginDetailsDiv">
             <h2 className="title2">Welcome,</h2>
           </div>
-          <form method="post" action="http://localhost/login.php" onSubmit={handleSubmit}>  
-          <div className="loginFieldsDiv">
-            <h3>Username</h3>
-            <input type="text" name="username" onChange={onChangeValue} />
-            <h3>Password</h3>
-            <input type="password" name="password" onChange={onChangeValue} />
-          </div>
-          
-          <div className="loginButtonDiv">
-            <button title="Login">Login</button>
-          </div>
+          <form
+            method="post"
+            action="http://localhost/login.php"
+            onSubmit={handleSubmit}
+          >
+            <div className="loginFieldsDiv">
+              <h3>Username</h3>
+              <input type="text" name="username" onChange={onChangeValue} />
+              <h3>Password</h3>
+              <input type="password" name="password" onChange={onChangeValue} />
+            </div>
+
+            <div className="loginButtonDiv">
+              <button title="Login">Login</button>
+            </div>
           </form>
-          
-         
         </div>
       </div>
     </div>
-   
   );
 }
