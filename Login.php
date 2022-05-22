@@ -1,5 +1,19 @@
 <?php
     header('Access-Control-Allow-Origin: http://localhost:3000');
+
+    
+    
+    
+    if(empty($user) ){
+        echo "Username is Required";
+    }
+    else if(empty($pass)){
+        echo "Password is required";
+    }
+    else{
+
+        $user=$_POST["username"];
+    $pass=$_POST["password"];
     $conn = new mysqli("localhost", "root", "", "obesity silo");
     $sql1 = "SELECT * FROM userlogin";
     $result1 = $conn->query($sql1);
@@ -9,18 +23,21 @@
             $username = $row1["userLoginName"];
             $password = $row1["password"];
 
-            echo "Username: " . $username . " Password: " . $password . "<br>";
-    
-    
-    if(empty($username) ){
-        echo "Username is required";
+           // echo "Username: " . $username . " Password: " . $password . "<br>";
+
+        }
     }
-    else if(empty($password)){
-        echo "Password is required";
+
+
+    if( $user ===$username && $pass = $password){
+        echo "Welcome";
+    }
+    else{
+        echo "Invalid Username or Password";
+    }
+
     }
     
-}
-    }
     
     
 ?>
