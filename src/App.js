@@ -7,6 +7,7 @@ import LoginScreen from "./LoginScreen";
 import PatientScreen from "./PatientScreen";
 import SearchCard from "./Searchcard";
 import SearchPage from "./searchPage";
+import Recommendation from "./Recommendation";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/report" element={<PatientReport />} />
         <Route path="/patientScreen" element={<PatientScreen />} />
         <Route path="/search" element={<SearchPage />} />
+        <Route path="/recommendation" element={<Recommendation />} />
 
         <Route
           path="/test"

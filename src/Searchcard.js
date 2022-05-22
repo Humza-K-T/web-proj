@@ -5,7 +5,7 @@ export default function SearchCard(props) {
   return (
     <>
       <div className="card">
-        <div className="imageDiv">
+        <div className="card-imageDiv">
           <img src="https://static.vecteezy.com/system/resources/thumbnails/005/544/718/small/profile-icon-design-free-vector.jpg" />
         </div>
         <div className="detailsDiv">

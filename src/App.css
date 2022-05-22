@@ -31,7 +31,7 @@
 }
 .imageDiv {
   /* flex: 1; */
-  /* background-color: blueviolet; */
+  background-color: blueviolet;
   padding-right: 0;
   margin-right: 0;
   width: 100%;
@@ -45,6 +45,7 @@
   */ /*object-fit: contain;
   */ /*mix-blend-mode: normal;
   */
+  /* background-color: red; */
   border-radius: 56px 0px 0px 56px;
   height: 100%;
   width: 100%;

@@ -20,7 +20,7 @@
 
   color: #000000;
 }
-.imageDiv {
+.card-imageDiv {
   /* background-color: red; */
   height: fit-content;
   /* margin: auto; */
@@ -29,7 +29,7 @@
   justify-content: center;
   padding-bottom: 20px;
 }
-.imageDiv img {
+.card-imageDiv img {
   /*width: 50px;
   ?*/
   border: 1px solid #99bbca;
