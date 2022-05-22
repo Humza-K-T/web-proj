@@ -7,7 +7,7 @@ export default function LoginScreen() {
   const [state, updateState] = React.useState({
     username: "",
     password: "",
-    message : "afra"
+    message : ""
   });
 
   function onChangeValue(event) {
@@ -65,7 +65,7 @@ export default function LoginScreen() {
           <div className="titleDiv">
             <h1 className="loginTitle">
               Pharmacotherapy for Obesity Management
-              {state.message}
+         {state.message}
             </h1>
           </div>
           <div className="loginDetailsDiv">
@@ -84,8 +84,10 @@ export default function LoginScreen() {
           </div>
           </form>
           
+         
         </div>
       </div>
     </div>
+   
   );
 }

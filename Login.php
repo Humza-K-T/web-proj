@@ -1,9 +1,8 @@
 <?php
     header('Access-Control-Allow-Origin: http://localhost:3000');
+    $user=$_POST["username"];
+    $pass=$_POST["password"];
 
-    
-    
-    
     if(empty($user) ){
         echo "Username is Required";
     }
@@ -12,8 +11,7 @@
     }
     else{
 
-        $user=$_POST["username"];
-    $pass=$_POST["password"];
+        
     $conn = new mysqli("localhost", "root", "", "obesity silo");
     $sql1 = "SELECT * FROM userlogin";
     $result1 = $conn->query($sql1);
