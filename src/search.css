@@ -1,7 +1,64 @@
-.card{
-width:227px;
-height:311px;
-border: #99BBCA solid;
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Encode+Sans+SC&display=swap");
 
+.card {
+  margin: 10px;
+  border: 1px solid #99bbca;
+  border-radius: 34px;
+  width: 200px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Encode Sans SC";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 19px;
+  text-transform: lowercase;
 
+  color: #000000;
+}
+.imageDiv {
+  /* background-color: red; */
+  height: fit-content;
+  /* margin: auto; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+.imageDiv img {
+  /*width: 50px;
+  ?*/
+  border: 1px solid #99bbca;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.detailsDiv {
+  /* border-top: 1px solid #99bbca; */
+  /* background-color: aqua; */
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-around;
+}
+.details-r {
+  display: flex;
+  flex-direction: column;
+  padding-right: 10px;
+  /* background-color: #99bbca; */
+  justify-content: right;
+  text-align: right;
+  /* align-items: flex-end; */
+}
+.details-l {
+  /* align-items:; */
+  align-content: flex-start;
+  /* background-color: pink; */
 }
