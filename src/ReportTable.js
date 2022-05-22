@@ -1,9 +1,10 @@
 import "./PatientReport.css";
 
 
-const ReportTable = () => {
+const ReportTable = (props) => {
     return (
         <div className="report--table">
+        <h4>{props.title}</h4>
             <span>CBC wdwdwdWBC: <input type="text" className="report--input" /></span>
             <span>CBC WBC: <input type="text" className="report--input" /></span>
             <br></br> <br></br>
