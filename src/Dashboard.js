@@ -36,7 +36,11 @@ export default function Dashboard() {
         </table>
 
         <div className="DashInput">
-          <input type="text" class="css-input" />
+          <form action="http://localhost/search.php" onSubmit={() => navigate("/login")} >
+          <input type="text" class="css-input" name="search"/>
+
+          <input type="submit" value="Submit" />
+          </form>
         </div>
 
         <div className="DashButtonDiv">
