@@ -12,27 +12,29 @@ export default function Dashboard() {
         <DashHeading name="DashBoard" />
 
         <table>
-          <tr>
-            <th>Sr No.</th>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Gender</th>
-            <th>Visit Date</th>
-          </tr>
-          <tr>
-            <td>1.</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>2.</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
+          <tbody>
+            <tr>
+              <th>Sr No.</th>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Gender</th>
+              <th>Visit Date</th>
+            </tr>
+            <tr>
+              <td>1.</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>2.</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
         </table>
 
         <div className="DashInput">
@@ -49,7 +51,7 @@ export default function Dashboard() {
         <div className="DashButtonDiv">
           <button
             type="button"
-            class="DashmyButton"
+            className="DashmyButton"
             onClick={() => navigate("/reg")}
           >
             Register New Patient
