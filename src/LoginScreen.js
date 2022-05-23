@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./App.css";
 import $ from "jquery";
 import { useNavigate } from "react-router-dom";
+import ProtectedRoutes from "./ProtectedRoutes";
+import { UserContext } from "./App";
 
 export default function LoginScreen() {
   const [state, updateState] = React.useState({
@@ -17,6 +19,7 @@ export default function LoginScreen() {
     });
   }
   const navigate = useNavigate();
+  const { user, setUser } = useContext(UserContext);
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = $(e.target);
@@ -33,7 +36,13 @@ export default function LoginScreen() {
         console.log(
           state.message === "Welcome" ? navigate("./dash") : navigate("/")
         );
-        state.message === "Welcome" ? navigate("./dash") : navigate("/");
+
+        //src https://www.youtube.com/watch?v=2lJuOh4YlGM
+        //    https://github.com/lesterfernandez/redirect-react-router-tutorial
+        if (state.message === "Welcome") {
+          setUser({ loggedIn: true });
+        }
+        // state.message === "Welcome" ? navigate("./dash") : navigate("/");
       },
     });
   };
