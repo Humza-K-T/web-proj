@@ -7,9 +7,11 @@ import Back from "./Back";
 import PatientHeader from "./PatientHeader";
 import ReportTable from "./ReportTable";
 import ReportTable2 from "./ReportTable2";
+import { useNavigate } from "react-router-dom";
 
 // import { ReportTable, ReportTable2 } from './ReportTable.js';
 const PatientReport = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <Navbar />
@@ -31,8 +33,18 @@ const PatientReport = () => {
         </div>
       </div>
       <div className="buttondiv">
-        <button className="report--button">DELETE REPORT</button>
-        <button className="report--button">SAVE REPORT</button>
+        <button
+          className="report--button"
+          onClick={() => navigate("/patientScreen")}
+        >
+          DELETE REPORT
+        </button>
+        <button
+          className="report--button"
+          onClick={() => navigate("/patientScreen")}
+        >
+          SAVE REPORT
+        </button>
       </div>
     </div>
   );

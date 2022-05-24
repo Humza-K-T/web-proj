@@ -1,8 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import Back from "./Back";
 import Navbar from "./navbar";
 import PatientHeader from "./PatientHeader";
 import "./PatientScreen.css";
 export default function PatientScreen() {
+  const navigate = useNavigate();
   return (
     <>
       <Navbar />
@@ -17,8 +19,15 @@ export default function PatientScreen() {
         gender="female"
       />
       <div className="buttondiv">
-        <button className="report--button">Add Recommendation</button>
-        <button className="report--button">Add Lab Report</button>
+        <button
+          className="report--button"
+          onClick={() => navigate("/recommendation")}
+        >
+          Add Recommendation
+        </button>
+        <button className="report--button" onClick={() => navigate("/report")}>
+          Add Lab Report
+        </button>
       </div>
       <div>
         <div className="Heading">Patient History</div>
