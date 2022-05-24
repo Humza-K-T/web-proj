@@ -11,7 +11,6 @@ import Recommendation from "./Recommendation";
 import ProtectedRoutes from "./ProtectedRoutes";
 import { createContext, useState } from "react";
 import ErrorScreen from "./ErrorScreen";
-import LineChart from "./LineChart";
 
 export const UserContext = createContext();
 
@@ -31,7 +30,17 @@ function App() {
             <Route path="/recommendation" element={<Recommendation />} />
           </Route>
           <Route path="*" element={<ErrorScreen />} />
-          <Route path="/test" element={<Recommendation />} />
+          <Route
+            path="/test"
+            element={
+              <SearchCard
+                name="bilal"
+                id="123"
+                dob="12-10-200"
+                visit="12-10-2000"
+              />
+            }
+          />
         </Routes>
       </Router>
     </UserContext.Provider>

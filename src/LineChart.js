@@ -1,3 +1,6 @@
+//https://www.youtube.com/watch?v=ClAW97s-h_Q
+//https://github.com/seemaholiday/line-chart
+
 import { useState } from "react";
 import { Line } from "react-chartjs-2";
 import {
