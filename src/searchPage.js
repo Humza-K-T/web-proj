@@ -8,17 +8,37 @@ export default function SearchPage() {
   const [data, setData] = React.useState([]);
 
   
-  console.log(data);
+ 
+ // console.log(data.);
   //   const navigate = useNavigate();
 
   //fetching json object
-  React.useEffect(() => {
-    fetch("https://localhost/search.php")
+  React.useEffect(() =>  {
+    fetch( "http://localhost/search.php")
       .then(res => res.json())
       .then(json => {
         setData(json);
+       
       });
   }, []);
+
+  console.log(data['data'][1]['id']);
+
+//   async React.componentDidMount() {
+//     try {
+//       const response = await fetch(`http://localhost/search.php`);
+//       if (!response.ok) {
+//         throw Error(response.statusText);
+//       }
+//     } catch (error) {
+//       console.log(error);
+//     }
+// }
+
+  
+
+
+  
 
 
 
