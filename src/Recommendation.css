@@ -12,7 +12,7 @@ input {
 }
 span {
   display: inline-block;
-  width: 350px;
+  width: 360px;
   text-align: right;
 }
 
@@ -32,7 +32,6 @@ span {
   margin: 20px 20px;
   width: 30%;
   text-align: center;
-  /* margin-bottom: 0; */
 }
 .recommendation--flexContainer {
   display: flex;
@@ -98,4 +97,21 @@ span {
 .box6 img {
   max-width: 100%;
   max-height: 50%;
+}
+
+.report--button {
+  padding: 10px 30px;
+  margin: 10px 10px;
+}
+
+.recommendation--inline-buttons {
+  display: flex;
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: center;
+}
+.recommendation--button {
+  margin-left: 30%;
+  text-align: center;
+  margin-right: 30%;
 }

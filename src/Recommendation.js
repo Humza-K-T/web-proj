@@ -24,21 +24,56 @@ const Recommendation = () => {
                 />
             </div>
             <div className="recommendation--flexContainer">
-                <RecommendationTable title="Current Medication" />
-                < ReportTable title="Lab Results" />
-                <RecommendationTable title="Physician Prescribed Medicine" />
+                <RecommendationTable
+                    title="Current Medication"
+                    inp1="LIRAGLUTUDE"
+                    inp2="NALTREXONE-BUPORPION"
+                    inp3="ORLISTAT"
+                    inp4="PHENTERMINE"
+                    inp5="TOPIRAMATE"
+                />
+                < ReportTable
+                    title="Lab Results"
+                    inp1="WBC"
+                    inp2="CREATININE"
+                    inp3="HEMOGLOBIN"
+                    inp4="eGFR"
+                    inp5="PLATELETS"
+                    inp6="AST"
+                    inp7="ALT"
+                />
+                <RecommendationTable
+                    title="Physician Prescribed Medicine"
+                    inp1="LIRAGLUTUDE"
+                    inp2="NALTREXONE-BUPORPION"
+                    inp3="ORLISTAT"
+                    inp4="PHENTERMINE"
+                    inp5="TOPIRAMATE"
+                />
             </div>
             <div className="recommendation--flexContainer">
-                <RecommendationTable title="System Prescribed Medication" />
+                <RecommendationTable
+                    title="System Prescribed Medication"
+                    inp1="LIRAGLUTUDE"
+                    inp2="NALTREXONE-BUPORPION"
+                    inp3="ORLISTAT"
+                    inp4="PHENTERMINE"
+                    inp5="TOPIRAMATE"
+                />
                 <div className="box5">
                     <div className="top">
                         <h4> Comments</h4>
                     </div>
                     <div className="bottom">
-                        <button className="report--button">DELETE REPORT</button>
-                        <button className="report--button">SAVE REPORT</button>
+                        <div className="recommendation--inline-buttons">
+                            <button className="report--button">DELETE REPORT</button>
+                            <button className="report--button">SAVE REPORT</button>
+                        </div>
+
                         <br></br>
-                        <button className="report--button">SAVE REPORT</button>
+                        <div className="recommendation--button">
+                            <button className="report--button">SAVE REPORT</button>
+                        </div>
                     </div>
                 </div>
                 <div className="box6">
