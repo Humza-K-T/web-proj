@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css?family=Encode+Sans+SC&display=swap");
+
+.Main-Error-Div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.error-return-button {
+  font-family: "Encode Sans SC";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 38px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  /*text-transform: lowercase;
+  */ /*align-items: center;
+  */
+  border: 1px solid #133746;
+  background-color: #45819a;
+  border-radius: 10px;
+  color: #ffffff;
+  height: fit-content;
+  width: fit-content;
+  padding: 10px;
+  /*font-size: 20px;
+  */ /*padding: 10px 60px;
+  */ /*border-radius: 5px;
+  */ /*margin: 10px 25px;
+  */
+  cursor: pointer;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.error-return-button:hover {
+  background-color: #82abbb;
+  color: #133746;
+}
