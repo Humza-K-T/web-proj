@@ -25,11 +25,40 @@ const PatientReport = () => {
       />
       <div className="maindiv">
         <div className="leftdiv">
-          <ReportTable />
-          <ReportTable />
+          <ReportTable
+            inp1="CBC-WBC"
+            inp2="CBC-Platelets"
+            inp3="CBC-Hemoglobin"
+            inp4="Creatinine"
+            inp5="eGFR"
+            inp6="AST"
+            inp7="ALT"
+
+
+          />
+          <ReportTable
+            inp1="HDL"
+            inp2="BUN"
+            inp3="Protein"
+            inp4="GGT"
+            inp5="Albumin"
+            inp6="Triglyceride"
+            inp7="Cholesterol" />
         </div>
         <div className="rightdiv">
-          <ReportTable2 />
+          <ReportTable2
+            inp1="DC-Segmented Neutrophil"
+            inp2="DC-Lymphocytes"
+            inp3="DC-Monocytes"
+            inp4="DC-Eosinophils"
+            inp5="DC-Uric Acid"
+            inp6="CBC-Hematocrit"
+            inp7="HBA1c"
+            inp8="LDL"
+            inp9="DC-Basophils"
+            inp10="CBC-RBC"
+            inp11="Bioimpedence"
+          />
         </div>
       </div>
       <div className="buttondiv">
