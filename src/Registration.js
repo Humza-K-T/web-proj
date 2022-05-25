@@ -38,7 +38,7 @@ export default function Registration() {
   const navigate = useNavigate();
 
   function handleSubmit(event) {
-    //event.preventDefault();
+    event.preventDefault();
     //navigate(-1)}
     console.log(state);
   }

@@ -8,32 +8,40 @@ import PatientScreen from "./PatientScreen";
 import SearchCard from "./Searchcard";
 import SearchPage from "./searchPage";
 import Recommendation from "./Recommendation";
+import ProtectedRoutes from "./ProtectedRoutes";
+import { createContext, useState } from "react";
+
+export const UserContext = createContext();
 
 function App() {
+  const [user, setUser] = useState({ loggedIn: false , name: "afra"});
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<LoginScreen />} />
-        <Route path="/reg" element={<Registration />} />
-        <Route path="/dash" element={<Dashboard />} />
-        <Route path="/report" element={<PatientReport />} />
-        <Route path="/patientScreen" element={<PatientScreen />} />
-        <Route path="/search" element={<SearchPage />} />
-        <Route path="/recommendation" element={<Recommendation />} />
-
-        <Route
-          path="/test"
-          element={
-            <SearchCard
-              name="bilal"
-              id="123"
-              dob="12-10-200"
-              visit="12-10-2000"
-            />
-          }
-        />
-      </Routes>
-    </Router>
+    <UserContext.Provider value={{ user, setUser }}>
+      <Router>
+        <Routes>
+          <Route path="/" element={<LoginScreen />} />
+          <Route element={<ProtectedRoutes />}>
+            <Route path="/reg" element={<Registration />} />
+            <Route path="/dash" element={<Dashboard />} />
+            <Route path="/report" element={<PatientReport />} />
+            <Route path="/patientScreen" element={<PatientScreen />} />
+            <Route path="/search" element={<SearchPage />} />
+            <Route path="/recommendation" element={<Recommendation />} />
+          </Route>
+          <Route
+            path="/test"
+            element={
+              <SearchCard
+                name="bilal"
+                id="123"
+                dob="12-10-200"
+                visit="12-10-2000"
+              />
+            }
+          />
+        </Routes>
+      </Router>
+    </UserContext.Provider>
   );
 }
 
