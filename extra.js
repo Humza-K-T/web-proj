@@ -27,7 +27,7 @@ export default function PatientScreen() {
     {
     $.ajax({
       type: "POST",
-      url: "http://localhost/searchPatient.php",
+      url: "http://localhost/Dashboard.php",
       data: "search="+JSON.parse(localStorage.getItem("patient")).pid,
       success(data) {
         //console.log(data)
@@ -81,11 +81,10 @@ export default function PatientScreen() {
               <th>Visit Date</th>
             </tr>
 
-            {state1.map(function(state1,i){
+            {state1.map(function(state1){
         return(
           <>
           <tr>
-            <td>{i}</td>
             <td>{state1.Id}</td>
             <td>{state1.name}</td>
             <td>{state1.gender}</td>
@@ -94,7 +93,20 @@ export default function PatientScreen() {
           </>
         )
     })}
-           
+            <tr>
+              <td>1.</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>2.</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
           </table>
         </div>
       </div>

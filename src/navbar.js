@@ -23,16 +23,20 @@ export default function Navbar() {
         <div className="navButtonDiv">
           <button
             onClick={() => {
+              console.log(1);
               setUser({
                 loggedIn: false,
               });
+              console.log(2);
 
               localStorage.setItem(
                 "user",
-                JSON.stringify({ loggedIn: false, name: "afra" })
+                JSON.stringify({ loggedIn: false, name: "" })
               );
-              localStorage.clear();
-              navigate("/");
+              console.log(3);
+
+              // localStorage.clear();
+              // navigate("/");
             }}
           >
             Logout
