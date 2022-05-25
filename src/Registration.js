@@ -70,10 +70,12 @@ export default function Registration() {
                 <InputX name="name" fun={handleChange} />
                 <br />
                 {/* <InputX name="dateOfBirth" fun={handleChange} /> */}
+                <div className="inputx">
                 Date of Birth:
-                <DatePicker name="dateOfBirth" selected={state.dateOfBirth} onChange={(date: Date) => setState({...state,
-                  dateOfBirth:date})
+                <DatePicker className="in" name="dateOfBirth" selected={state.dateOfBirth} onChange={(date: Date) => setState({...state,
+                  dateOfBirth:date} )
                   } />
+                  </div>
                 <br />
                 <Radio name="gender" gender={state.gender} fun={handleChange} />
                 <br />
