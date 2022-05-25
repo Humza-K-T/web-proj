@@ -9,10 +9,10 @@ export default function LoginScreen() {
   const [state, updateState] = React.useState({
     username: "",
     password: "",
-    message: "",
+    message: "error",
   });
 
-  
+  var x=2;
   const navigate = useNavigate();
   const { user, setUser } = useContext(UserContext);
 
@@ -21,7 +21,7 @@ export default function LoginScreen() {
   setUser(
     {
       ...user,
-      loggedIn: true,
+      loggedIn: false,
     }
   );
 
@@ -33,24 +33,38 @@ export default function LoginScreen() {
       url: form.attr("action"),
       data: form.serialize(),
       success(data) {
+        console.log(data)
+        console.log('test')
+        
         updateState({
           ...state,
           message: data,
-        });
-        console.log(state.message);
-        console.log(
-          state.message == "3" ? navigate("./dash") : navigate("/")
+        }
         );
+        x=1;
+        console.log(x)
+        console.log(state.message);
+        console.log(x)
+      
+       
+
+          if(x===1 && state.message !== "error"){
+            setUser({ ...user, loggedIn: true });
+            navigate('./dash');
+          }
+          else{
+            navigate("/");
+          }
+      
+        
 
         //src https://www.youtube.com/watch?v=2lJuOh4YlGM
         //    https://github.com/lesterfernandez/redirect-react-router-tutorial
-        if (state.message == "3") {
-          setUser({ ...user, loggedIn: true });
-        }
+        
 
         localStorage.setItem(
           "user",
-          JSON.stringify({ loggedIn: true, name: "afra" })
+          JSON.stringify({ loggedIn: true, name: state.message })
         );
          console.log(state.loggedIn);
 

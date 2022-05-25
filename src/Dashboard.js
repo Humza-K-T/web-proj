@@ -18,6 +18,8 @@ export default function Dashboard() {
     
   });
 
+   
+  console.log(JSON.parse(localStorage.getItem("user")));
   
 
   React.useEffect(() => {
