@@ -40,9 +40,15 @@ export default function LoginScreen() {
         //src https://www.youtube.com/watch?v=2lJuOh4YlGM
         //    https://github.com/lesterfernandez/redirect-react-router-tutorial
         if (state.message === "Welcome") {
-          setUser({ ...user,
-            loggedIn: true });
+          setUser({ ...user, loggedIn: true });
         }
+
+        localStorage.setItem(
+          "user",
+          JSON.stringify({ loggedIn: true, name: "afra" })
+        );
+        // console.log(state.loggedIn);
+
         // state.message === "Welcome" ? navigate("./dash") : navigate("/");
       },
     });

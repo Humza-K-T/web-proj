@@ -9,7 +9,11 @@ const useAuth = () => {
 const ProtectedRoutes = () => {
   const location = useLocation();
   const isAuth = useAuth();
-  return isAuth ? (
+
+  console.log(JSON.parse(localStorage.getItem("user")));
+  const loggedIn = JSON.parse(localStorage.getItem("user"))["loggedIn"];
+  // console.log(localStorage.JSON.parse(localStorage.getItem("user")));
+  return loggedIn ? (
     <Outlet />
   ) : (
     <Navigate to="/" replace state={{ from: location }} />

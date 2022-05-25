@@ -24,8 +24,13 @@ export default function Navbar() {
           <button
             onClick={() => {
               setUser({
-                loggedIn: true,
+                loggedIn: false,
               });
+
+              localStorage.setItem(
+                "user",
+                JSON.stringify({ loggedIn: false, name: "afra" })
+              );
               navigate("/");
             }}
           >
