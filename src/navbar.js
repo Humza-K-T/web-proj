@@ -31,7 +31,7 @@ export default function Navbar() {
 
               localStorage.setItem(
                 "user",
-                JSON.stringify({ loggedIn: false, name: "afra" })
+                JSON.stringify({ loggedIn: false, name: "" })
               );
               console.log(3);
 
