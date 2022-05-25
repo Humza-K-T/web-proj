@@ -13,13 +13,16 @@ export default function Dashboard() {
   var x=1;
   
   var [state, updateState] = React.useState({
-    id:1,
+    pid:1,
     name:"",
     gender:"",
-    registration:"",
+    vdate:"",
+    dob:"",
     message:"error"
     
   });
+
+
 
    
   console.log(JSON.parse(localStorage.getItem("user")));
@@ -34,7 +37,7 @@ export default function Dashboard() {
       updateAllData(res.data);
        //console.log(res.data)
        console.log(res.data)
-        //console.log(alldata.length)
+        console.log(alldata)
         state.id=2
         x=2
         
@@ -72,7 +75,7 @@ export default function Dashboard() {
             console.log(state.message);
             localStorage.setItem(
               "patient",  
-              JSON.stringify({ pid:state.message})
+              JSON.stringify({ pid:state.message, name:state.name, gender:state.gender, dob:state.dob, vdate:state.vdate})
             );
             navigate("/patientScreen");
           }

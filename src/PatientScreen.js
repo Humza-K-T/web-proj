@@ -3,8 +3,48 @@ import Back from "./Back";
 import Navbar from "./navbar";
 import PatientHeader from "./PatientHeader";
 import "./PatientScreen.css";
+import React from "react"
+import $ from "jquery";
 export default function PatientScreen() {
+
+
   const navigate = useNavigate();
+  var x=1;
+
+  console.log(JSON.parse(localStorage.getItem("patient")));
+
+  var [state1, updateState1]=React.useState([{}]);
+
+  const [state, updateState]=React.useState({
+    pid:JSON.parse(localStorage.getItem("patient")).pid,
+    name:JSON.parse(localStorage.getItem("patient")).name,
+    dob:JSON.parse(localStorage.getItem("patient")).dob,
+    vdate:JSON.parse(localStorage.getItem("patient")).vdate,
+    gender:JSON.parse(localStorage.getItem('patient')).gender
+  }
+  )
+  React.useEffect(()=>
+    {
+    $.ajax({
+      type: "POST",
+      url: "http://localhost/searchPatient.php",
+      data: "search="+JSON.parse(localStorage.getItem("patient")).pid,
+      success(data) {
+        //console.log(data)
+        console.log(JSON.parse(data))
+        console.log(JSON.parse(data).data)
+        
+        updateState1(JSON.parse(data).data);
+        console.log(state1);
+        
+        x=2;
+     
+        //console.log(state1);
+      },
+    });
+  },[x]);
+  
+
   return (
     <>
       <Navbar />
@@ -12,11 +52,11 @@ export default function PatientScreen() {
       <Back />
 
       <PatientHeader
-        name="Afra Siyab"
-        ID="12534"
-        DOB="10-1-2000"
-        VisitDate="10-1-2022"
-        gender="female"
+        name={state.name}
+        ID={state.pid}
+        DOB={state.dob}
+        VisitDate={state.vdate}
+        gender={state.gender}
       />
       <div className="buttondiv">
         <button
@@ -40,20 +80,21 @@ export default function PatientScreen() {
               <th>Gender</th>
               <th>Visit Date</th>
             </tr>
-            <tr>
-              <td>1.</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>2.</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
+
+            {state1.map(function(state1,i){
+        return(
+          <>
+          <tr>
+            <td>{i}</td>
+            <td>{state1.Id}</td>
+            <td>{state1.name}</td>
+            <td>{state1.gender}</td>
+            <td>{state1.Registration_Date}</td>
+          </tr>
+          </>
+        )
+    })}
+           
           </table>
         </div>
       </div>
