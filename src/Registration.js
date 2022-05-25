@@ -65,6 +65,7 @@ export default function Registration() {
             action="http://localhost/registration.php"
             onSubmit={handleSubmit}
           >
+            
             <div className="registration-parentdiv">
               <div className="registration-indiv">
                 <InputX name="name" fun={handleChange} />
