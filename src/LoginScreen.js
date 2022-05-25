@@ -101,9 +101,9 @@ export default function LoginScreen() {
           >
             <div className="loginFieldsDiv">
               <h3>Username</h3>
-              <input type="text" name="username" onChange={onChangeValue} />
+              <input type="text" name="username" onChange={(e)=>this.onChangeValue()} />
               <h3>Password</h3>
-              <input type="password" name="password" onChange={onChangeValue} />
+              <input type="password" name="password" onChange={(e)=>this.onChangeValue()} />
             </div>
 
             <div className="loginButtonDiv">
