@@ -1,8 +1,6 @@
 <?php
     header('Access-Control-Allow-Origin: http://localhost:3000');
-    $id =1;
-    $MRNO=1000;
-
+  
     $name=$_POST['name'];
     $dateOfBirth=$_POST['dateOfBirth'];
     $contactNo=$_POST['contactNo'];
@@ -19,13 +17,18 @@
     $kidneyDisease=$_POST['kidneyDisease'];
     $familyHistory=$_POST['familyHistory'];
 
-    $conn = new mysqli("localhost", "root", "", "obesity silo");
-    $sql1 = "INSERT INTO patientprofile (patientId, patientMRNO, patientName, gender, DateOfBirth, height, weight, SBP, DBP, RGLevel, FGLevel, smoker, alchoholic, familyHeartHistory, kidneyIssue)
-    VALUES ($id,$MRNO, $name, $gender,  $dateOfBirth, $height,$weight,$systolicBloodPressure,$diastolicBloodPressure ,$randomGluLevel,$fastingGluLevel,$smoker,$alcohlic, $familyHistory,$kidneyDisease);";
+    
+
+
+
+    $conn = new mysqli("localhost", "root", "", "obesity_silo");
+    $sql1 = "INSERT INTO patientprofile (patientName, gender, DateOfBirth, height, weight, SBP, DBP, RGLevel, FGLevel, smoker, alcoholic, familyHeartHistory, kidneyIssue)
+    VALUES ('$name', '$gender',  '$dateOfBirth', '$height','$weight','$systolicBloodPressure','$diastolicBloodPressure' ,'$randomGluLevel','$fastingGluLevel','$smoker','$alcohlic', '$familyHistory','$kidneyDisease');";
+    
     $result1 = $conn->query($sql1);
 
-    if ($result1->num_rows >= 0) {
-      echo "Successful";
+    if ($result1!=Null) {
+      echo " Record Successful";
 
         }
         else{
