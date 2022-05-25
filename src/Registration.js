@@ -39,6 +39,7 @@ export default function Registration() {
 
   function handleSubmit(event) {
     event.preventDefault();
+    navigate("/patientScreen");
     //navigate(-1)}
     console.log(state);
   }
@@ -108,7 +109,7 @@ export default function Registration() {
                 type="submit"
                 value="REGISTER"
                 name="Register"
-                onClick={() => navigate("/patientScreen")}
+                
               />
             </div>
           </form>
