@@ -12,12 +12,7 @@ export default function LoginScreen() {
     message: "",
   });
 
-  function onChangeValue(event) {
-    updateState({
-      ...state,
-      [event.target.name]: event.target.value,
-    });
-  }
+  
   const navigate = useNavigate();
   const { user, setUser } = useContext(UserContext);
 
@@ -47,7 +42,7 @@ export default function LoginScreen() {
 
         //src https://www.youtube.com/watch?v=2lJuOh4YlGM
         //    https://github.com/lesterfernandez/redirect-react-router-tutorial
-        if (state.message === "Welcome") {
+        if (state.message === "3") {
           setUser({ ...user, loggedIn: true });
         }
 
@@ -55,7 +50,7 @@ export default function LoginScreen() {
           "user",
           JSON.stringify({ loggedIn: true, name: "afra" })
         );
-        // console.log(state.loggedIn);
+         console.log(state.loggedIn);
 
         // state.message === "Welcome" ? navigate("./dash") : navigate("/");
       },
@@ -101,9 +96,9 @@ export default function LoginScreen() {
           >
             <div className="loginFieldsDiv">
               <h3>Username</h3>
-              <input type="text" name="username" onChange={(e)=>this.onChangeValue()} />
+              <input type="text" name="username"  />
               <h3>Password</h3>
-              <input type="password" name="password" onChange={(e)=>this.onChangeValue()} />
+              <input type="password" name="password"  />
             </div>
 
             <div className="loginButtonDiv">
