@@ -16,6 +16,8 @@ export default function LoginScreen() {
   const navigate = useNavigate();
   const { user, setUser } = useContext(UserContext);
 
+  
+
   setUser(
     {
       ...user,
@@ -37,12 +39,12 @@ export default function LoginScreen() {
         });
         console.log(state.message);
         console.log(
-          state.message === "Welcome" ? navigate("./dash") : navigate("/")
+          state.message == "3" ? navigate("./dash") : navigate("/")
         );
 
         //src https://www.youtube.com/watch?v=2lJuOh4YlGM
         //    https://github.com/lesterfernandez/redirect-react-router-tutorial
-        if (state.message === "3") {
+        if (state.message == "3") {
           setUser({ ...user, loggedIn: true });
         }
 

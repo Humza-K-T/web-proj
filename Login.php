@@ -15,7 +15,7 @@
     // }
 
         
-    $conn = new mysqli("localhost", "root", "", "obesity silo");
+    $conn = new mysqli("localhost", "root", "", "obesity_silo");
     $sql1 = "SELECT * FROM userlogin";
     $result1 = $conn->query($sql1);
 
@@ -25,7 +25,7 @@
             $password = $row1["password"];
 
             if( $user ==$username && $pass == $password){
-                $message= $username;
+                $message= "3";
                 break;
             }
             else{
