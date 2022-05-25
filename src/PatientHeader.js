@@ -10,14 +10,14 @@ export default function PatientHeader(props) {
     <>
       <div className="PatientHeader-Main-Div">
         <div className="PatientImageDiv">
-          {props.gender === "male" && (
+          {props.gender === "Male" && (
             <img
               className="PatientImage"
               src="https://med.gov.bz/wp-content/uploads/2020/08/dummy-profile-pic.jpg"
               alt=""
             />
           )}
-          {props.gender === "female" && (
+          {props.gender === "Female" && (
             <img
               className="PatientImage"
               src="https://png.pngtree.com/png-vector/20190118/ourlarge/pngtree-vector-female-student-icon-png-image_326761.jpg"

@@ -13,7 +13,7 @@ export default function Dashboard() {
   var x=1;
   
   var [state, updateState] = React.useState({
-    pid:1,
+    pid:"",
     name:"",
     gender:"",
     vdate:"",
@@ -59,6 +59,27 @@ export default function Dashboard() {
         console.log(data)
         console.log('test')
         
+        if(data !== "error"){
+         // console.log(data)
+          // updateState({
+          //   ...state,
+          //   pid:JSON.parse(data).data.pid,
+          //   name:JSON.parse(data).data.name,
+          //   dob:JSON.parse(data).data.dob,
+          //   vdate:JSON.parse(data).data.vdate,
+          //   gender:JSON.parse(data).data.gender
+          // });
+
+          console.log("data recieved for patient")
+          console.log(JSON.parse(data).data[0].Id)
+
+
+          localStorage.setItem(
+            "patient",  
+            JSON.stringify({ pid:JSON.parse(data).data[0].Id, name:JSON.parse(data).data[0].name, gender:JSON.parse(data).data[0].gender, dob:JSON.parse(data).data[0].dateOfBirth, vdate:JSON.parse(data).data[0].Registration_Date})
+          );
+
+        }
         updateState({
           ...state,
           message: data,
@@ -73,10 +94,7 @@ export default function Dashboard() {
           if( state.message !== "error"){
            
             console.log(state.message);
-            localStorage.setItem(
-              "patient",  
-              JSON.stringify({ pid:state.message, name:state.name, gender:state.gender, dob:state.dob, vdate:state.vdate})
-            );
+            
             navigate("/patientScreen");
           }
           else{

@@ -20,9 +20,11 @@ export default function PatientScreen() {
     name:JSON.parse(localStorage.getItem("patient")).name,
     dob:JSON.parse(localStorage.getItem("patient")).dob,
     vdate:JSON.parse(localStorage.getItem("patient")).vdate,
-    gender:JSON.parse(localStorage.getItem('patient')).gender
+    gender:JSON.parse(localStorage.getItem('patient')).gender,
   }
   )
+
+  console.log(state.gender)
   React.useEffect(()=>
     {
     $.ajax({
