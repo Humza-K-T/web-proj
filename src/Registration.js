@@ -5,13 +5,17 @@ import Navbar from "./navbar";
 import Radio from "./Radio";
 import InputX from "./InputX";
 import Check from "./Check";
+import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css";
+
 import DashHeading from "./DashHeading";
 import { useNavigate } from "react-router-dom";
 
 export default function Registration() {
   const [state, setState] = React.useState({
     name: "",
-    dateOfBirth: "",
+    dateOfBirth: new Date(),
     contactNo: "",
     height: "",
     gender: "",
@@ -26,6 +30,8 @@ export default function Registration() {
     kidneyDisease: "",
     familyHistory: "",
   });
+
+  const [startDate, setStartDate] = React.useState(new Date());
 
   const handleChange = (event) => {
     const { name, value, type, checked } = event.target;
@@ -63,7 +69,11 @@ export default function Registration() {
               <div className="registration-indiv">
                 <InputX name="name" fun={handleChange} />
                 <br />
-                <InputX name="dateOfBirth" fun={handleChange} />
+                {/* <InputX name="dateOfBirth" fun={handleChange} /> */}
+                Date of Birth:
+                <DatePicker name="dateOfBirth" selected={state.dateOfBirth} onChange={(date: Date) => setState({...state,
+                  dateOfBirth:date})
+                  } />
                 <br />
                 <Radio name="gender" gender={state.gender} fun={handleChange} />
                 <br />

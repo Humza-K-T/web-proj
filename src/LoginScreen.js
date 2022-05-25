@@ -9,7 +9,7 @@ export default function LoginScreen() {
   const [state, updateState] = React.useState({
     username: "",
     password: "",
-    message: "error",
+    message: "err",
   });
 
   var x=2;
@@ -48,8 +48,9 @@ export default function LoginScreen() {
       
        
 
-          if(x===1 && state.message !== "error"){
+          if(x===1 && (state.message !== "error" && state.message !== "err")){
             setUser({ ...user, loggedIn: true });
+            
             navigate('./dash');
           }
           else{
@@ -104,6 +105,7 @@ export default function LoginScreen() {
           </div>
           <div className="loginDetailsDiv">
             <h2 className="title2">Welcome,</h2>
+           <h2> {state.message==="error" ? "Invalid Username or Password" : ""} </h2>
           </div>
           <form
             method="post"
@@ -121,7 +123,7 @@ export default function LoginScreen() {
               <button title="Login">Login</button>
             </div>
           </form>
-          <label className="error">{state.message}</label>
+          
         </div>
       </div>
     </div>
