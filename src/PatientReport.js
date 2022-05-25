@@ -7,22 +7,41 @@ import Back from "./Back";
 import PatientHeader from "./PatientHeader";
 import ReportTable from "./ReportTable";
 import ReportTable2 from "./ReportTable2";
+import React from "react"
 import { useNavigate } from "react-router-dom";
 
 // import { ReportTable, ReportTable2 } from './ReportTable.js';
 const PatientReport = () => {
   const navigate = useNavigate();
+
+  const [state, updateState]=React.useState({
+    pid:JSON.parse(localStorage.getItem("patient")).pid,
+    name:JSON.parse(localStorage.getItem("patient")).name,
+    dob:JSON.parse(localStorage.getItem("patient")).dob,
+    vdate:JSON.parse(localStorage.getItem("patient")).vdate,
+    gender:JSON.parse(localStorage.getItem('patient')).gender
+  }
+  )
+
+  function handleSubmit(event){
+    event.preventDefault();
+    navigate("/patientScreen");
+    //navigate(-1)}
+    console.log(state);
+  }
+
   return (
     <div>
       <Navbar />
       <Back />
       <PatientHeader
-        name="Afra Siyab"
-        ID="12534"
-        DOB="10-1-2000"
-        VisitDate="10-1-2022"
-        gender="female"
+        name={state.name}
+        ID={state.pid}
+        DOB={state.dob}
+        VisitDate={state.vdate}
+        gender={state.gender}
       />
+      <form method="POST" action="http://localhost/Report.php" onSubmit={handleSubmit}>
       <div className="maindiv">
         <div className="leftdiv">
           <ReportTable
@@ -62,20 +81,16 @@ const PatientReport = () => {
         </div>
       </div>
       <div className="buttondiv">
-        <button
+       
+        <input type="submit"
           className="report--button"
-          onClick={() => navigate("/patientScreen")}
-        >
-          DELETE REPORT
-        </button>
-        <button
-          className="report--button"
-          onClick={() => navigate("/patientScreen")}
-        >
-          SAVE REPORT
-        </button>
+          value="Submit"
+       />
+         
       </div>
+      </form>
     </div>
+
   );
 };
 export default PatientReport;
