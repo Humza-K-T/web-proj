@@ -20,6 +20,14 @@ export default function LoginScreen() {
   }
   const navigate = useNavigate();
   const { user, setUser } = useContext(UserContext);
+
+  setUser(
+    {
+      ...user,
+      loggedIn: true,
+    }
+  );
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = $(e.target);
@@ -102,6 +110,7 @@ export default function LoginScreen() {
               <button title="Login">Login</button>
             </div>
           </form>
+          <button onClick={() => navigate("/dash")}>Register</button>
         </div>
       </div>
     </div>
