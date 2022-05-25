@@ -3,6 +3,8 @@ import DashHeading from "./DashHeading";
 import Navbar from "./navbar";
 import { useNavigate } from "react-router-dom";
 import React from "react"
+import $ from "jquery";
+import userEvent from "@testing-library/user-event";
 
 export default function Dashboard() {
   const navigate = useNavigate();
@@ -14,7 +16,8 @@ export default function Dashboard() {
     id:1,
     name:"",
     gender:"",
-    registration:""
+    registration:"",
+    message:"error"
     
   });
 
@@ -37,6 +40,61 @@ export default function Dashboard() {
         
       });
   }, [x]);
+
+  function handleSubmit(event) {
+    // event.stopImmediatePropagation() 
+    
+    event.preventDefault();
+    console.log(state);
+  
+    const form = $(event.target);
+    $.ajax({
+      type: "POST",
+      url: form.attr("action"),
+      data: form.serialize(),
+      success(data) {
+        console.log(data)
+        console.log('test')
+        
+        updateState({
+          ...state,
+          message: data,
+        }
+        );
+       
+        console.log(state.message);
+      
+      
+       
+
+          if( state.message !== "error"){
+           
+            console.log(state.message);
+            localStorage.setItem(
+              "patient",  
+              JSON.stringify({ pid:state.message})
+            );
+            navigate("/patientScreen");
+          }
+          else{
+            console.log(state.message);
+            navigate("/dash");
+          }
+      
+        
+
+        //src https://www.youtube.com/watch?v=2lJuOh4YlGM
+        //    https://github.com/lesterfernandez/redirect-react-router-tutorial
+        
+
+        
+        
+
+        // state.message === "Welcome" ? navigate("./dash") : navigate("/");
+      },
+    });
+  };
+
 
 
 
@@ -76,12 +134,13 @@ export default function Dashboard() {
 
         <div className="DashInput">
           <form
+            method="post"
             action="http://localhost/search.php"
-            onSubmit={() => navigate("/search")}
+            onSubmit={handleSubmit}
           >
             <input type="text" className="css-input" name="search" />
 
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Submit"  />
           </form>
         </div>
 
