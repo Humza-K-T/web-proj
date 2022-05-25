@@ -20,6 +20,14 @@ export default function LoginScreen() {
   }
   const navigate = useNavigate();
   const { user, setUser } = useContext(UserContext);
+
+  setUser(
+    {
+      ...user,
+      loggedIn: true,
+    }
+  );
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = $(e.target);
@@ -40,9 +48,15 @@ export default function LoginScreen() {
         //src https://www.youtube.com/watch?v=2lJuOh4YlGM
         //    https://github.com/lesterfernandez/redirect-react-router-tutorial
         if (state.message === "Welcome") {
-          setUser({ ...user,
-            loggedIn: true });
+          setUser({ ...user, loggedIn: true });
         }
+
+        localStorage.setItem(
+          "user",
+          JSON.stringify({ loggedIn: true, name: "afra" })
+        );
+        // console.log(state.loggedIn);
+
         // state.message === "Welcome" ? navigate("./dash") : navigate("/");
       },
     });
@@ -96,6 +110,7 @@ export default function LoginScreen() {
               <button title="Login">Login</button>
             </div>
           </form>
+          <button onClick={() => navigate("/dash")}>Register</button>
         </div>
       </div>
     </div>

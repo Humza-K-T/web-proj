@@ -1,29 +1,29 @@
 import "./PatientReport.css";
 
-const ReportTable2 = () => {
+const ReportTable2 = (props) => {
     return (
         <div className="report--table2">
-            <span>CBCwdwdwdwd WBC: <input type="text" className="report--input" /></span>
+            <span>{props.inp1}: <input type="text" className="report--input" /></span>
             <br></br> <br></br>
-            <span>CBCaaw WBC: <input type="text" className="report--input" /></span>
+            <span>{props.inp2}: <input type="text" className="report--input" /></span>
             <br></br> <br></br>
-            <span>CBC wawdaccWBC: <input type="text" className="report--input" /></span>
+            <span>{props.inp3}: <input type="text" className="report--input" /></span>
             <br></br> <br></br>
-            <span>CBC ccWBC: <input type="text" className="report--input" /></span>
+            <span>{props.inp4}: <input type="text" className="report--input" /></span>
             <br></br> <br></br>
-            <span>CBC WBdwacacawC: <input type="text" className="report--input" /></span>
+            <span>{props.inp5}: <input type="text" className="report--input" /></span>
             <br></br> <br></br>
-            <span>CBC cwcwadwWBC: <input type="text" className="report--input" /></span>
+            <span>{props.inp6}: <input type="text" className="report--input" /></span>
             <br></br> <br></br>
-            <span>CBC WwcacascBC: <input type="text" className="report--input" /></span>
+            <span>{props.inp7}: <input type="text" className="report--input" /></span>
             <br></br> <br></br>
-            <span>CBC cccWBC: <input type="text" className="report--input" /></span>
+            <span>{props.inp8}: <input type="text" className="report--input" /></span>
             <br></br> <br></br>
-            <span>CBC WBC: <input type="text" className="report--input" /></span>
+            <span>{props.inp9}: <input type="text" className="report--input" /></span>
             <br></br> <br></br>
-            <span>CBC WccccBC: <input type="text" className="report--input" /></span>
+            <span>{props.inp10}: <input type="text" className="report--input" /></span>
             <br></br> <br></br>
-            <span>CBC WwBC: <input type="text" className="report--input" /></span>
+            <span>{props.inp11}: <input type="text" className="report--input" /></span>
         </div>
     );
 }

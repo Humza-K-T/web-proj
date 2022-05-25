@@ -10,11 +10,12 @@ import SearchPage from "./searchPage";
 import Recommendation from "./Recommendation";
 import ProtectedRoutes from "./ProtectedRoutes";
 import { createContext, useState } from "react";
+import ErrorScreen from "./ErrorScreen";
 
 export const UserContext = createContext();
 
 function App() {
-  const [user, setUser] = useState({ loggedIn: false , name: "afra"});
+  const [user, setUser] = useState({ loggedIn: false, name: "afra" });
   return (
     <UserContext.Provider value={{ user, setUser }}>
       <Router>
@@ -28,6 +29,7 @@ function App() {
             <Route path="/search" element={<SearchPage />} />
             <Route path="/recommendation" element={<Recommendation />} />
           </Route>
+          <Route path="*" element={<ErrorScreen />} />
           <Route
             path="/test"
             element={

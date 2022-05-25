@@ -5,14 +5,14 @@
     $pass=$_POST["password"];
     $message;
 
-    if(empty($user) ){
-        $message= "Username is Required";
-        goto end;
-    }
-    else if(empty($pass)){
-        $message= "Password is required";
-        goto end;
-    }
+    // if(empty($user) ){
+    //     $message= "Username is Required";
+    //     goto end;
+    // }
+    // else if(empty($pass)){
+    //     $message= "Password is required";
+    //     goto end;
+    // }
 
         
     $conn = new mysqli("localhost", "root", "", "obesity silo");
@@ -25,17 +25,19 @@
             $password = $row1["password"];
 
             if( $user ==$username && $pass == $password){
-                $message= "Welcome";
+                $message= $username;
                 break;
             }
             else{
-                $message= "Invalid Username or Password";
+                $message= "1";
             }
 
         }
     }
     else{
-        echo "Username not found";
+
+        echo "2";
+
     }
 
 

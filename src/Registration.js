@@ -43,7 +43,6 @@ export default function Registration() {
     console.log(state);
   }
 
-  
   return (
     <>
       <Navbar />
@@ -104,8 +103,13 @@ export default function Registration() {
                 <InputX name="familyHistory" fun={handleChange} />
               </div>
             </div>
-            <div className="register-button" >
-              <input type="submit" value="REGISTER" name="Register" />
+            <div className="register-button">
+              <input
+                type="submit"
+                value="REGISTER"
+                name="Register"
+                onClick={() => navigate("/patientScreen")}
+              />
             </div>
           </form>
         </div>

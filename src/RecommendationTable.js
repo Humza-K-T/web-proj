@@ -7,15 +7,15 @@ const RecommendationTable = (props) => {
 
         <div className="recommendation--table">
             <h4> {props.title}</h4>
-            <span>CBCwdwdwdwd WBC: <input type="text" /></span>
+            <span>{props.inp1}: <input type="text" /></span>
             <br></br> <br></br>
-            <span>CBCaaw WBC: <input type="text" /></span>
+            <span>{props.inp2}: <input type="text" /></span>
             <br></br> <br></br>
-            <span>CBC wawdaccWBC: <input type="text" /></span>
+            <span>{props.inp3}: <input type="text" /></span>
             <br></br> <br></br>
-            <span>CBC ccWBC: <input type="text" /></span>
+            <span>{props.inp4}: <input type="text" /></span>
             <br></br> <br></br>
-            <span>CBC WBdwacacawC: <input type="text" /></span>
+            <span>{props.inp5}: <input type="text" /></span>
         </div>
 
     );
