@@ -1,23 +1,24 @@
 <?php
- header('Access-Control-Allow-Origin: http://localhost:3000');
+    header('Access-Control-Allow-Origin: http://localhost:3000');   
 
 
- $pID = $_POST['search'];
+    $pID = $_POST['search'];
+    
+    $conn = new mysqli("localhost", "root", "", "obesity_silo");
+    $sql1 = "Select Id, WBC, Haemoglobin, Platelet, creatinine,  eGFR, AST,ALT
 
-$conn = new mysqli("localhost", "root", "", "obesity_silo");
-$sql1 = "SELECT * FROM `patientprofile` WHERE patientId = '$pID'";
-$result1 = $conn->query($sql1);
+    FROM patientclinincalrecord WHERE patientId = '$pID'";
 
-if ($result1!= NULL) {
-    while ($row1 = $result1->fetch_assoc()) {
+    $result1 = $conn->query($sql1);
 
-        $json['data'][]=array('Id'=> $row1["patientId"],'name'=> $row1["patientName"], 'gender'=>$row1["gender"], 'Registration_Date'=>$row1["dateOfRegistration"]);
+    if ($result1 != null) {
+        while ($row1 = $result1->fetch_assoc()) {
+                $jsn['dat'][]=array('WBC'=> $row1["WBC"],'Haemoglobin'=> $row1["Haemoglobin"], 'Platelet'=> $row1["Platelet"],'creatinine'=> $row1["creatinine"],'eGFR'=>$row1["eGFR"],'AST'=> $row1["AST"],'ALT'=> $row1["ALT"]);
+        }
+        $display= json_encode($jsn);
+        echo $display;
     }
-    $display= json_encode($json);
-    echo $display;
-
+    else{
+        echo "Patient not found";
     }
-else{
-    echo "error";
-}
-$conn->close();
+    
