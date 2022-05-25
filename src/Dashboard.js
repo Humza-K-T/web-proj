@@ -161,7 +161,7 @@ export default function Dashboard() {
           >
             <input type="text" className="css-input" name="search" />
 
-            <input type="submit" value="Submit"  />
+            
           </form>
         </div>
 

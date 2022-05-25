@@ -39,7 +39,7 @@ export default function Registration() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    navigate("/patientScreen");
+    navigate("/dash");
     //navigate(-1)}
     console.log(state);
   }

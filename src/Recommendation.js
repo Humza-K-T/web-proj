@@ -7,23 +7,34 @@ import "./Recommendation.css";
 import RecommendationTable from "./RecommendationTable";
 import ReportTable from "./ReportTable";
 import { useNavigate } from "react-router-dom";
+import React from "react";
 
 import LineChart from "./LineChart";
 
 const Recommendation = () => {
   const navigate = useNavigate();
+
+  const [state, updateState]=React.useState({
+    pid:JSON.parse(localStorage.getItem("patient")).pid,
+    name:JSON.parse(localStorage.getItem("patient")).name,
+    dob:JSON.parse(localStorage.getItem("patient")).dob,
+    vdate:JSON.parse(localStorage.getItem("patient")).vdate,
+    gender:JSON.parse(localStorage.getItem('patient')).gender
+  }
+  )
+
   return (
     <div>
       <div>
         <Navbar />
         <Back />
         <PatientHeader
-          name="Afra Siyab"
-          ID="12534"
-          DOB="10-1-2000"
-          VisitDate="10-1-2022"
-          gender="female"
-        />
+        name={state.name}
+        ID={state.pid}
+        DOB={state.dob}
+        VisitDate={state.vdate}
+        gender={state.gender}
+      />
       </div>
       <div className="recommendation-body">
         <div className="recommendation--flexContainer">

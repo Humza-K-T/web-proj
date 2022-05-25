@@ -121,7 +121,7 @@ export default function LoginScreen() {
               <button title="Login">Login</button>
             </div>
           </form>
-          <button onClick={() => navigate("/dash")}>Register</button>
+          <label className="error">{state.message}</label>
         </div>
       </div>
     </div>
