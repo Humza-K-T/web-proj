@@ -21,14 +21,14 @@ export default function Dashboard() {
   
 
   React.useEffect(() => {
-    fetch("http://localhost/login.php")
+    fetch("http://localhost/Dashboard.php")
       .then(res => res.json())
       .then(res => {
       //  console.log(res);
       
       updateAllData(res.data);
        //console.log(res.data)
-       console.log(alldata)
+       console.log(res.data)
         //console.log(alldata.length)
         state.id=2
         x=2
@@ -46,12 +46,6 @@ export default function Dashboard() {
         <DashHeading name="DashBoard" />
 
         <table>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Gender</th>
-            <th>Registration Date and Time</th>
-          </tr>
           
           <tbody>
             <tr>
@@ -69,7 +63,7 @@ export default function Dashboard() {
             <td>{alldat.Id}</td>
             <td>{alldat.name}</td>
             <td>{alldat.gender}</td>
-            <td>{alldata['Registration Date']}</td>
+            <td>{alldat.Registration_Date}</td>
           </tr>
           </>
         )
