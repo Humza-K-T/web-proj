@@ -25,18 +25,18 @@
             $password = $row1["password"];
 
             if( $user ==$username && $pass == $password){
-                $message= "3";
+                $message= $username;
                 break;
             }
             else{
-                $message= "1";
+                $message= "error";
             }
 
         }
     }
     else{
 
-        echo "2";
+         $message="error";
 
     }
 
