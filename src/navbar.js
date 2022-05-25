@@ -31,7 +31,7 @@ export default function Navbar() {
                 "user",
                 JSON.stringify({ loggedIn: false, name: "afra" })
               );
-              localStorage.clear();
+              // localStorage.clear();
               navigate("/");
             }}
           >
