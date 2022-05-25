@@ -43,6 +43,9 @@ export default function Registration() {
     //navigate(-1)}
     console.log(state);
   }
+  setTimeout(() => {
+    this.yourFunction();
+    }, 1000);
 
   return (
     <>
@@ -68,6 +71,7 @@ export default function Registration() {
                 <br />
                 <InputX name="height" fun={handleChange} />
                 <br />
+
                 <InputX name="weight" fun={handleChange} />
                 <br />
                 <InputX name="hospitalId" fun={handleChange} />
