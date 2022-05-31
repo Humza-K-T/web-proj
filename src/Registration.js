@@ -5,6 +5,7 @@ import Navbar from "./navbar";
 import Radio from "./Radio";
 import InputX from "./InputX";
 import Check from "./Check";
+import $ from "jquery";
 import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
@@ -43,7 +44,19 @@ export default function Registration() {
 
   const navigate = useNavigate();
 
+  
+
   function handleSubmit(event) {
+    const form = $(event.target);
+    $.ajax({
+      type: "POST",
+      url: form.attr("action"),
+      data: form.serialize(),
+      success(data) {
+        console.log(data)
+        console.log('test')
+      }
+    });
     event.preventDefault();
     navigate("/dash");
     //navigate(-1)}

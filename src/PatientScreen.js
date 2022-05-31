@@ -33,10 +33,10 @@ export default function PatientScreen() {
       data: "search="+JSON.parse(localStorage.getItem("patient")).pid,
       success(data) {
         //console.log(data)
-        console.log(JSON.parse(data))
-        console.log(JSON.parse(data).data)
-        
-        updateState1(JSON.parse(data).data);
+       // console.log(JSON.parse(data))
+        console.log(JSON.parse(data).dat)
+      
+        updateState1(JSON.parse(data).dat);
         console.log(state1);
         
         x=2;
@@ -79,8 +79,7 @@ export default function PatientScreen() {
               <th>Sr No.</th>
               <th>ID</th>
               <th>Name</th>
-              <th>Gender</th>
-              <th>Visit Date</th>
+              <th>RBC</th>
             </tr>
 
             {state1.map(function(state1,i){
@@ -88,10 +87,9 @@ export default function PatientScreen() {
           <>
           <tr>
             <td>{i}</td>
-            <td>{state1.Id}</td>
-            <td>{state1.name}</td>
-            <td>{state1.gender}</td>
-            <td>{state1.Registration_Date}</td>
+            <td>{JSON.parse(localStorage.getItem("patient")).pid}</td>
+            <td>{JSON.parse(localStorage.getItem("patient")).name}</td>
+            <td>{state1.rbc}</td>
           </tr>
           </>
         )

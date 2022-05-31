@@ -7,7 +7,8 @@ import Back from "./Back";
 import PatientHeader from "./PatientHeader";
 import ReportTable from "./ReportTable";
 import ReportTable2 from "./ReportTable2";
-import React from "react"
+import React from "react";
+import $ from "jquery";
 import { useNavigate } from "react-router-dom";
 
 // import { ReportTable, ReportTable2 } from './ReportTable.js';
@@ -24,6 +25,16 @@ const PatientReport = () => {
   )
 
   function handleSubmit(event){
+    const form = $(event.target);
+    $.ajax({
+      type: "POST",
+      url: form.attr("action"),
+      data: form.serialize(),
+      success(data) {
+        console.log(data)
+        console.log('test')
+      }
+    });
     event.preventDefault();
     navigate("/patientScreen");
     //navigate(-1)}
@@ -44,6 +55,9 @@ const PatientReport = () => {
       <form method="POST" action="http://localhost/Report.php" onSubmit={handleSubmit}>
       <div className="maindiv">
         <div className="leftdiv">
+
+          <input type="hidden" name="id" value={JSON.parse(localStorage.getItem("patient")).pid} />
+
           <ReportTable
             inp1="CBC-WBC"
             inp2="CBC-Platelets"
@@ -66,11 +80,11 @@ const PatientReport = () => {
         </div>
         <div className="rightdiv">
           <ReportTable2
-            inp1="DC-Segmented Neutrophil"
+            inp1="DC-Neutrophil"
             inp2="DC-Lymphocytes"
             inp3="DC-Monocytes"
             inp4="DC-Eosinophils"
-            inp5="DC-Uric Acid"
+            inp5="DC-Uric-Acid"
             inp6="CBC-Hematocrit"
             inp7="HBA1c"
             inp8="LDL"
